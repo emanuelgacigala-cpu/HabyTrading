@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haby Trading — Used Trucks & Heavy Machinery from Germany to Latin America</title>
+<meta name="description" content="Your buying agent in Europe: you find the used truck or heavy machinery on the German market (Mobile.de, TruckScout24, Mascus), we inspect it, negotiate VAT-free export and ship it RoRo to your nearest port in Latin America. Transparent fees, no hidden markup.">
+<meta name="keywords" content="used trucks from Germany, import truck from Germany, used heavy machinery Europe, Mercedes Actros, MAN TGX, Scania, Volvo, used excavators, independent technical inspection, RoRo shipping Latin America, VAT-free export, buying agent Germany, camiones usados de Alemania, importar camión desde Alemania, maquinaria pesada usada">
+<meta property="og:title" content="Haby Trading — Your buying agent for trucks & machinery in Germany">
+<meta property="og:description" content="Find your truck on the German market. We verify it, negotiate and ship it to your nearest port. Transparent commission, no surprises.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://habytrading.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10222F;        /* Atlantic navy — text & dark sections */
+  --deep:#0B1922;       /* deeper navy — footer / hero base */
+  --fog:#EDF0F1;        /* cool fog — page background */
+  --white:#FFFFFF;
+  --cargo:#F25C1A;      /* safety / cargo orange — accents & CTA */
+  --steel:#5C6E79;      /* steel gray — secondary text */
+  --line:#C9D2D6;       /* hairline on light */
+  --line-dark:#24394A;  /* hairline on dark */
+  --radius:6px;
+  --max:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Archivo',system-ui,sans-serif;font-variation-settings:'wdth' 100;background:var(--fog);color:var(--ink);line-height:1.55;font-size:16.5px}
+.mono{font-family:'IBM Plex Mono',monospace}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cargo);font-weight:600}
+section{padding:88px 0}
+h2{font-size:clamp(28px,4vw,40px);font-weight:800;font-variation-settings:'wdth' 75;letter-spacing:-.01em;line-height:1.08;margin:10px 0 14px}
+.lead{color:var(--steel);max-width:640px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:var(--radius);font-weight:700;text-decoration:none;font-size:15.5px;transition:transform .12s ease,background .15s ease;border:1.5px solid transparent}
+.btn:active{transform:scale(.98)}
+.btn-cargo{background:var(--cargo);color:#fff}
+.btn-cargo:hover{background:#D94E12}
+.btn-ghost{border-color:var(--line-dark);color:#fff}
+.btn-ghost:hover{border-color:#fff}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(11,25,34,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line-dark)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:baseline;gap:8px;color:#fff;text-decoration:none;flex-shrink:0}
+.logo b{font-weight:900;font-variation-settings:'wdth' 72;font-size:21px;letter-spacing:.02em}
+.logo span{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--cargo);letter-spacing:.18em}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:#C7D3DA;text-decoration:none;font-size:14.5px;font-weight:500}
+.nav-links a:hover{color:#fff}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav .btn{padding:9px 16px;font-size:14px}
+/* language switcher */
+.lang{display:flex;border:1px solid var(--line-dark);border-radius:99px;overflow:hidden}
+.lang button{background:transparent;border:none;color:#8CA0AC;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.08em;padding:7px 12px;cursor:pointer;transition:all .15s ease}
+.lang button:hover{color:#fff}
+.lang button.on{background:var(--cargo);color:#fff}
+@media(max-width:1000px){.nav-links{display:none}}
+@media(max-width:560px){.nav .btn-cargo{display:none}}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(180deg,var(--deep) 0%,var(--ink) 100%);color:#fff;padding:96px 0 0;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(38px,6vw,66px);font-weight:900;font-variation-settings:'wdth' 72;line-height:1.02;letter-spacing:-.015em;margin:18px 0 20px;max-width:860px}
+.hero h1 em{font-style:normal;color:var(--cargo)}
+.hero p.sub{color:#AEBEC8;max-width:620px;font-size:18px}
+.hero-cta{display:flex;gap:14px;margin:34px 0 0;flex-wrap:wrap}
+/* signature: cargo manifest route strip */
+.route{margin-top:72px;border-top:1px solid var(--line-dark);background:rgba(255,255,255,.025)}
+.route-inner{display:flex;align-items:center;overflow-x:auto;padding:22px 0;scrollbar-width:none}
+.route-inner::-webkit-scrollbar{display:none}
+.leg{display:flex;align-items:center;flex-shrink:0}
+.port{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:#D7E1E7;white-space:nowrap}
+.port b{color:#fff;font-weight:600}
+.port small{display:block;color:var(--steel);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
+.dash{width:74px;height:1px;margin:0 18px;background:repeating-linear-gradient(90deg,var(--cargo) 0 7px,transparent 7px 13px);position:relative}
+.dash::after{content:'▸';position:absolute;right:-4px;top:-9px;color:var(--cargo);font-size:11px}
+
+/* ---------- trust strip ---------- */
+.trust{background:var(--white);border-bottom:1px solid var(--line);padding:26px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.trust-item{display:flex;gap:12px;align-items:flex-start}
+.trust-item .tick{color:var(--cargo);font-weight:900;font-size:17px;line-height:1.4}
+.trust-item p{font-size:14.5px;font-weight:600;line-height:1.35}
+.trust-item p small{display:block;font-weight:400;color:var(--steel);margin-top:2px;font-size:13px}
+@media(max-width:860px){.trust-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.trust-grid{grid-template-columns:1fr}}
+
+/* ---------- marketplaces ---------- */
+.markets .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+.market-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-decoration:none;display:block;transition:border-color .15s ease,transform .15s ease}
+.market-card:hover{border-color:var(--cargo);transform:translateY(-2px)}
+.market-card .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+.market-card h3{font-size:19px;font-weight:800;margin:8px 0 6px;font-variation-settings:'wdth' 82}
+.market-card p{font-size:14px;color:var(--steel);line-height:1.45}
+.market-card .go{margin-top:14px;font-size:13.5px;font-weight:700;color:var(--cargo)}
+@media(max-width:860px){.markets .grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.markets .grid{grid-template-columns:1fr}}
+
+/* ---------- workflow ---------- */
+.flow{background:var(--ink);color:#fff}
+.flow .lead{color:#AEBEC8}
+.steps{margin-top:52px;display:grid}
+.step{display:grid;grid-template-columns:120px 1fr;gap:28px;padding:30px 0;border-top:1px solid var(--line-dark)}
+.step:last-child{border-bottom:1px solid var(--line-dark)}
+.step-code{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--cargo);font-weight:600;letter-spacing:.08em;padding-top:4px}
+.step-code small{display:block;color:var(--steel);font-weight:400;font-size:11px;margin-top:4px;letter-spacing:.1em}
+.step h3{font-size:21px;font-weight:800;font-variation-settings:'wdth' 80;margin-bottom:8px}
+.step p{color:#B9C7D0;font-size:15.5px;max-width:660px}
+.step .who{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:12px}
+.who.you{background:rgba(242,92,26,.14);color:#FF9A66;border:1px solid rgba(242,92,26,.4)}
+.who.us{background:rgba(255,255,255,.07);color:#D7E1E7;border:1px solid var(--line-dark)}
+@media(max-width:700px){.step{grid-template-columns:1fr;gap:8px}}
+
+/* ---------- scope ---------- */
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:38px}
+.scope-col{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.scope-col.out{background:transparent;border-style:dashed}
+.scope-col h3{font-size:18px;font-weight:800;font-variation-settings:'wdth' 82;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.scope-col ul{list-style:none}
+.scope-col li{padding:9px 0;border-top:1px solid var(--line);font-size:15px;display:flex;gap:10px}
+.scope-col li:first-of-type{border-top:none}
+.scope-col .tick{color:var(--cargo);font-weight:900}
+.scope-col .cross{color:var(--steel);font-weight:700}
+.scope-note{margin-top:22px;background:var(--ink);color:#D7E1E7;border-radius:var(--radius);padding:20px 24px;font-size:14.5px;display:flex;gap:14px;align-items:flex-start}
+.scope-note b{color:#fff}
+.scope-note .flag{color:var(--cargo);font-size:18px;line-height:1.3}
+@media(max-width:760px){.scope-grid{grid-template-columns:1fr}}
+
+/* ---------- fees ---------- */
+.fees{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
+.fee{border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.fee .n{font-family:'IBM Plex Mono',monospace;color:var(--cargo);font-size:12px;letter-spacing:.1em;font-weight:600}
+.fee h3{font-size:19px;font-weight:800;font-variation-settings:'wdth' 82;margin:10px 0 8px}
+.fee p{font-size:14.5px;color:var(--steel)}
+.fee .when{margin-top:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink);background:var(--fog);padding:8px 12px;border-radius:4px;display:inline-block}
+@media(max-width:820px){.fee-grid{grid-template-columns:1fr}}
+
+/* ---------- countries ---------- */
+.countries .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:13px;border:1px solid var(--line);background:var(--white);border-radius:99px;padding:9px 18px;color:var(--ink)}
+.chip b{color:var(--cargo);margin-right:6px}
+
+/* ---------- faq ---------- */
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);margin-top:12px}
+.faq summary{cursor:pointer;padding:20px 24px;font-weight:700;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';color:var(--cargo);font-weight:900;font-size:20px;line-height:1}
+.faq details[open] summary::after{content:'–'}
+.faq .a{padding:0 24px 22px;color:var(--steel);font-size:15px;max-width:760px}
+
+/* ---------- final cta ---------- */
+.final{background:linear-gradient(180deg,var(--ink),var(--deep));color:#fff}
+.final h2{max-width:760px}
+.final .lead{color:#AEBEC8}
+.final .mono-line{font-family:'IBM Plex Mono',monospace;color:var(--cargo);font-size:13px;letter-spacing:.1em;margin-top:26px}
+
+/* ---------- footer ---------- */
+footer{background:var(--deep);color:#8CA0AC;padding:44px 0;font-size:13.5px;border-top:1px solid var(--line-dark)}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+footer h4{color:#fff;font-size:13px;letter-spacing:.1em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;margin-bottom:14px;font-weight:600}
+footer ul{list-style:none}
+footer li{margin:7px 0}
+footer a{color:#8CA0AC;text-decoration:none}
+footer a:hover{color:#fff}
+footer .legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line-dark);font-size:12.5px;line-height:1.6}
+@media(max-width:760px){footer .cols{grid-template-columns:1fr}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+:focus-visible{outline:2.5px solid var(--cargo);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Haby Trading — home">
+      <b>HABY TRADING</b><span>DE → LATAM</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#where-to-search" data-i18n="nav_search"></a></li>
+      <li><a href="#how-it-works" data-i18n="nav_how"></a></li>
+      <li><a href="#scope" data-i18n="nav_scope"></a></li>
+      <li><a href="#fees" data-i18n="nav_fees"></a></li>
+      <li><a href="#faq" data-i18n="nav_faq"></a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="on">EN</button>
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="pt">PT</button>
+      </div>
+      <a class="btn btn-cargo wa-link" href="#" target="_blank" rel="noopener" data-i18n="nav_cta"></a>
+    </div>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="hero_eyebrow"></p>
+    <h1 data-i18n="hero_h1"></h1>
+    <p class="sub" data-i18n="hero_sub"></p>
+    <div class="hero-cta">
+      <a class="btn btn-cargo wa-link" href="#" target="_blank" rel="noopener" data-i18n="hero_cta1"></a>
+      <a class="btn btn-ghost" href="#how-it-works" data-i18n="hero_cta2"></a>
+    </div>
+  </div>
+  <div class="route" aria-hidden="true">
+    <div class="wrap route-inner">
+      <div class="leg"><div class="port"><b data-i18n="route1"></b><small>Mobile.de · TruckScout24 · Mascus</small></div><div class="dash"></div></div>
+      <div class="leg"><div class="port"><b data-i18n="route2"></b><small data-i18n="route2s"></small></div><div class="dash"></div></div>
+      <div class="leg"><div class="port"><b>DE-HAM</b><small data-i18n="route3s"></small></div><div class="dash"></div></div>
+      <div class="leg"><div class="port"><b>PY · BO · CL · PE</b><small>GT · HN · DO · UY</small></div><div class="dash"></div></div>
+      <div class="leg"><div class="port"><b data-i18n="route5"></b><small data-i18n="route5s"></small></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap trust-grid">
+    <div class="trust-item"><span class="tick">✓</span><p><span data-i18n="t1"></span><small data-i18n="t1s"></small></p></div>
+    <div class="trust-item"><span class="tick">✓</span><p><span data-i18n="t2"></span><small data-i18n="t2s"></small></p></div>
+    <div class="trust-item"><span class="tick">✓</span><p><span data-i18n="t3"></span><small data-i18n="t3s"></small></p></div>
+    <div class="trust-item"><span class="tick">✓</span><p><span data-i18n="t4"></span><small data-i18n="t4s"></small></p></div>
+  </div>
+</div>
+
+<section class="markets" id="where-to-search">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="mk_eyebrow"></p>
+    <h2 data-i18n="mk_h2"></h2>
+    <p class="lead" data-i18n="mk_lead"></p>
+    <div class="grid">
+      <a class="market-card reveal" href="https://www.mobile.de" target="_blank" rel="noopener">
+        <span class="tag" data-i18n="mk1_tag"></span>
+        <h3>Mobile.de</h3>
+        <p data-i18n="mk1_p"></p>
+        <div class="go" data-i18n="mk1_go"></div>
+      </a>
+      <a class="market-card reveal" href="https://www.truckscout24.com" target="_blank" rel="noopener">
+        <span class="tag" data-i18n="mk2_tag"></span>
+        <h3>TruckScout24</h3>
+        <p data-i18n="mk2_p"></p>
+        <div class="go" data-i18n="mk2_go"></div>
+      </a>
+      <a class="market-card reveal" href="https://autoline.info" target="_blank" rel="noopener">
+        <span class="tag" data-i18n="mk3_tag"></span>
+        <h3>Autoline</h3>
+        <p data-i18n="mk3_p"></p>
+        <div class="go" data-i18n="mk3_go"></div>
+      </a>
+      <a class="market-card reveal" href="https://www.mascus.com" target="_blank" rel="noopener">
+        <span class="tag" data-i18n="mk4_tag"></span>
+        <h3>Mascus</h3>
+        <p data-i18n="mk4_p"></p>
+        <div class="go" data-i18n="mk4_go"></div>
+      </a>
+      <a class="market-card reveal" href="https://www.truck1.eu" target="_blank" rel="noopener">
+        <span class="tag" data-i18n="mk5_tag"></span>
+        <h3>Truck1</h3>
+        <p data-i18n="mk5_p"></p>
+        <div class="go" data-i18n="mk5_go"></div>
+      </a>
+      <a class="market-card reveal" href="https://www.machineryzone.com" target="_blank" rel="noopener">
+        <span class="tag" data-i18n="mk6_tag"></span>
+        <h3>MachineryZone</h3>
+        <p data-i18n="mk6_p"></p>
+        <div class="go" data-i18n="mk6_go"></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="flow" id="how-it-works">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="fl_eyebrow"></p>
+    <h2 data-i18n="fl_h2"></h2>
+    <p class="lead" data-i18n="fl_lead"></p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-code"><span data-i18n="s1_code"></span><small data-i18n="s1_time"></small></div>
+        <div>
+          <span class="who you" data-i18n="you"></span>
+          <h3 data-i18n="s1_h"></h3>
+          <p data-i18n="s1_p"></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-code"><span data-i18n="s2_code"></span><small data-i18n="s2_time"></small></div>
+        <div>
+          <span class="who us" data-i18n="us"></span>
+          <h3 data-i18n="s2_h"></h3>
+          <p data-i18n="s2_p"></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-code"><span data-i18n="s3_code"></span><small data-i18n="s3_time"></small></div>
+        <div>
+          <span class="who us" data-i18n="us"></span>
+          <h3 data-i18n="s3_h"></h3>
+          <p data-i18n="s3_p"></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-code"><span data-i18n="s4_code"></span><small data-i18n="s4_time"></small></div>
+        <div>
+          <span class="who you" data-i18n="you"></span>
+          <h3 data-i18n="s4_h"></h3>
+          <p data-i18n="s4_p"></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-code"><span data-i18n="s5_code"></span><small data-i18n="s5_time"></small></div>
+        <div>
+          <span class="who us" data-i18n="us"></span>
+          <h3 data-i18n="s5_h"></h3>
+          <p data-i18n="s5_p"></p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-code"><span data-i18n="s6_code"></span><small data-i18n="s6_time"></small></div>
+        <div>
+          <span class="who you" data-i18n="you_prep"></span>
+          <h3 data-i18n="s6_h"></h3>
+          <p data-i18n="s6_p"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="scope">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="sc_eyebrow"></p>
+    <h2 data-i18n="sc_h2"></h2>
+    <div class="scope-grid">
+      <div class="scope-col">
+        <h3><span style="color:var(--cargo)">■</span> <span data-i18n="sc_in_h"></span></h3>
+        <ul>
+          <li><span class="tick">✓</span> <span data-i18n="in1"></span></li>
+          <li><span class="tick">✓</span> <span data-i18n="in2"></span></li>
+          <li><span class="tick">✓</span> <span data-i18n="in3"></span></li>
+          <li><span class="tick">✓</span> <span data-i18n="in4"></span></li>
+          <li><span class="tick">✓</span> <span data-i18n="in5"></span></li>
+          <li><span class="tick">✓</span> <span data-i18n="in6"></span></li>
+          <li><span class="tick">✓</span> <span data-i18n="in7"></span></li>
+          <li><span class="tick">✓</span> <span data-i18n="in8"></span></li>
+        </ul>
+      </div>
+      <div class="scope-col out">
+        <h3><span style="color:var(--steel)">□</span> <span data-i18n="sc_out_h"></span></h3>
+        <ul>
+          <li><span class="cross">✕</span> <span data-i18n="out1"></span></li>
+          <li><span class="cross">✕</span> <span data-i18n="out2"></span></li>
+          <li><span class="cross">✕</span> <span data-i18n="out3"></span></li>
+          <li><span class="cross">✕</span> <span data-i18n="out4"></span></li>
+          <li><span class="cross">✕</span> <span data-i18n="out5"></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="scope-note reveal">
+      <span class="flag">⚓</span>
+      <div data-i18n="sc_note"></div>
+    </div>
+  </div>
+</section>
+
+<section class="fees" id="fees">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="fe_eyebrow"></p>
+    <h2 data-i18n="fe_h2"></h2>
+    <p class="lead" data-i18n="fe_lead"></p>
+    <div class="fee-grid">
+      <div class="fee reveal">
+        <span class="n" data-i18n="fe1_n"></span>
+        <h3 data-i18n="fe1_h"></h3>
+        <p data-i18n="fe1_p"></p>
+        <span class="when" data-i18n="fe1_w"></span>
+      </div>
+      <div class="fee reveal">
+        <span class="n" data-i18n="fe2_n"></span>
+        <h3 data-i18n="fe2_h"></h3>
+        <p data-i18n="fe2_p"></p>
+        <span class="when" data-i18n="fe2_w"></span>
+      </div>
+      <div class="fee reveal">
+        <span class="n" data-i18n="fe3_n"></span>
+        <h3 data-i18n="fe3_h"></h3>
+        <p data-i18n="fe3_p"></p>
+        <span class="when" data-i18n="fe3_w"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="countries">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="co_eyebrow"></p>
+    <h2 data-i18n="co_h2"></h2>
+    <p class="lead" data-i18n="co_lead"></p>
+    <div class="chips">
+      <span class="chip"><b>PY</b> <span data-i18n="co_py"></span></span>
+      <span class="chip"><b>BO</b> <span data-i18n="co_bo"></span></span>
+      <span class="chip"><b>CL</b> Chile — Iquique · San Antonio</span>
+      <span class="chip"><b>PE</b> Peru — Callao</span>
+      <span class="chip"><b>UY</b> Uruguay — Montevideo</span>
+      <span class="chip"><b>GT</b> Guatemala — Puerto Quetzal / Santo Tomás</span>
+      <span class="chip"><b>HN</b> Honduras — Puerto Cortés</span>
+      <span class="chip"><b>DO</b> <span data-i18n="co_do"></span></span>
+      <span class="chip"><b>EC</b> <span data-i18n="co_ec"></span></span>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="fq_eyebrow"></p>
+    <h2 data-i18n="fq_h2"></h2>
+    <details class="reveal"><summary data-i18n="q1"></summary><div class="a" data-i18n="a1"></div></details>
+    <details class="reveal"><summary data-i18n="q2"></summary><div class="a" data-i18n="a2"></div></details>
+    <details class="reveal"><summary data-i18n="q3"></summary><div class="a" data-i18n="a3"></div></details>
+    <details class="reveal"><summary data-i18n="q4"></summary><div class="a" data-i18n="a4"></div></details>
+    <details class="reveal"><summary data-i18n="q5"></summary><div class="a" data-i18n="a5"></div></details>
+    <details class="reveal"><summary data-i18n="q6"></summary><div class="a" data-i18n="a6"></div></details>
+    <details class="reveal"><summary data-i18n="q7"></summary><div class="a" data-i18n="a7"></div></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="fi_eyebrow"></p>
+    <h2 data-i18n="fi_h2"></h2>
+    <p class="lead" style="margin-top:14px" data-i18n="fi_lead"></p>
+    <div class="hero-cta">
+      <a class="btn btn-cargo wa-link" href="#" target="_blank" rel="noopener" data-i18n="fi_cta"></a>
+      <a class="btn btn-ghost" href="mailto:quotes@habytrading.com">quotes@habytrading.com</a>
+    </div>
+    <p class="mono-line" data-i18n="fi_mono"></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Haby Trading</h4>
+        <p data-i18n="ft_about"></p>
+      </div>
+      <div>
+        <h4 data-i18n="ft_service"></h4>
+        <ul>
+          <li><a href="#where-to-search" data-i18n="nav_search"></a></li>
+          <li><a href="#how-it-works" data-i18n="nav_how"></a></li>
+          <li><a href="#scope" data-i18n="nav_scope"></a></li>
+          <li><a href="#fees" data-i18n="nav_fees"></a></li>
+          <li><a href="#faq" data-i18n="nav_faq"></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft_contact"></h4>
+        <ul>
+          <li><a class="wa-link" href="#" target="_blank" rel="noopener" data-i18n="ft_wa"></a></li>
+          <li><a href="mailto:quotes@habytrading.com">quotes@habytrading.com</a></li>
+          <li><span class="mono" style="font-size:12px">habytrading.com</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal" data-i18n="ft_legal"></div>
+  </div>
+</footer>
+
+<script>
+// ============ CONFIG ============
+const WA_NUMBER = "421900000000"; // TODO: replace with your real WhatsApp Business number (no + sign)
+
+// ============ TRANSLATIONS ============
+const T = {
+en: {
+  nav_search:"Where to search", nav_how:"How it works", nav_scope:"Service scope", nav_fees:"Fees", nav_faq:"FAQ",
+  nav_cta:"Send a link on WhatsApp",
+  hero_eyebrow:"Buying agent in Europe · Used trucks & heavy machinery from Germany",
+  hero_h1:"You pick the truck in Germany.<br>We <em>inspect, negotiate and ship it</em>.",
+  hero_sub:"Haby Trading is your buying agent for importing used trucks and heavy machinery from Germany to Latin America: independent technical inspection, a direct purchase between you and the German seller — free of German VAT — and RoRo shipping to your nearest port. Transparent commission. No own stock, no hidden markup.",
+  hero_cta1:"Found one already? Send the link", hero_cta2:"See how it works",
+  route1:"YOU CHOOSE", route2:"INSPECTION", route2s:"Germany · photo/video report", route3s:"Hamburg / Bremerhaven · RoRo",
+  route5:"YOUR PORT", route5s:"Delivery + original documents",
+  t1:"Transparent commission", t1s:"You see the seller's real price. Our fee is fixed and visible.",
+  t2:"Independent inspection", t2s:"A technical report with photos and video before you pay the seller a single euro.",
+  t3:"Direct purchase", t3s:"The contract and the payment for the truck are between you and the German seller.",
+  t4:"VAT-free export", t4s:"We handle the net purchase: you save the 19% German VAT.",
+  mk_eyebrow:"Step zero — the search is yours",
+  mk_h2:"Where to find your truck or machinery on the German market",
+  mk_lead:"We don't sell our own stock: you get access to the entire German and European market of used trucks, tractor units, tippers, trailers and construction machinery. Search these portals — several have Spanish versions — and when you find something you like, just copy us the link.",
+  mk1_tag:"Trucks · The biggest", mk1_p:"Germany's largest vehicle portal. Mercedes Actros, MAN TGX, Scania and Volvo tractor units; tippers, chassis, reefers.", mk1_go:"Search Mobile.de →",
+  mk2_tag:"Trucks · Spanish version", mk2_p:"Specialized in commercial vehicles and semi-trailers, with filters by price, year and mileage.", mk2_go:"Search TruckScout24 →",
+  mk3_tag:"Trucks + machinery · Spanish version", mk3_p:"Thousands of listings of used trucks and machinery across Europe, with a full Spanish version.", mk3_go:"Search Autoline →",
+  mk4_tag:"Heavy machinery · Spanish version", mk4_p:"The reference portal for used construction machinery: excavators, wheel loaders, cranes, compactors, agricultural.", mk4_go:"Search Mascus →",
+  mk5_tag:"Trucks + machinery · Spanish version", mk5_p:"A wide European offer of trucks, buses, trailers and construction equipment from verified sellers.", mk5_go:"Search Truck1 →",
+  mk6_tag:"Heavy machinery · Spanish version", mk6_p:"Used construction and agricultural machinery from European sellers: backhoes, graders, platforms.", mk6_go:"Search MachineryZone →",
+  fl_eyebrow:"The process, no small print",
+  fl_h2:"How it works: from a link to your port in 6 steps",
+  fl_lead:"At every step we tell you who does what. Your part is simple: search, decide and pay the seller directly. Our part is everything else in Germany and at sea.",
+  you:"You do this", us:"We do this", you_prep:"You do this — we prepare everything",
+  s1_code:"STEP 01", s1_time:"1–2 DAYS", s1_h:"Find your truck and send us the link",
+  s1_p:"Search on Mobile.de, TruckScout24, Autoline, Mascus or any European portal. Copy the listing link and send it to us on WhatsApp. Within 48 hours you receive a complete quote: vehicle price without German VAT + our commission + freight to your nearest port. Everything itemized, nothing hidden.",
+  s2_code:"STEP 02", s2_time:"3–7 DAYS", s2_h:"Independent technical inspection in Germany",
+  s2_p:"If the quote works for you, you pay the engagement & inspection fee. An independent inspector visits the vehicle: engine, gearbox, chassis, brakes, leaks, history and real mileage. You receive a report with photos and videos. If the truck isn't worth it, we tell you straight and you pick another — the inspection protects you from fraud, the #1 risk when buying from far away.",
+  s3_code:"STEP 03", s3_time:"2–5 DAYS", s3_h:"We negotiate the price and the VAT-free sale",
+  s3_p:"We negotiate with the German seller in their language: final price, conditions and the net export sale (without the 19% German VAT). We prepare the purchase contract directly between you and the seller. When the contract is signed, the first half of our success commission is invoiced.",
+  s4_code:"STEP 04", s4_time:"1–3 DAYS", s4_h:"You pay the German seller directly",
+  s4_p:"You transfer the vehicle price directly to the seller's account — your money never passes through us. The truck is yours from the first euro, with the contract and export invoice in your name.",
+  s5_code:"STEP 05", s5_time:"2–4 WEEKS", s5_h:"Pickup, German customs and RoRo loading",
+  s5_p:"With our logistics partner we collect the vehicle anywhere in Germany, file the export declaration (German customs) and load it RoRo in Hamburg, Bremerhaven or Antwerp. When the vessel booking is confirmed, the second half of the commission and the logistics package are invoiced. You get transit updates until arrival.",
+  s6_code:"STEP 06", s6_time:"ARRIVAL", s6_h:"You collect at your port with the original documents",
+  s6_p:"The vessel arrives at the agreed port. Against the final payment you receive the complete set of originals: Bill of Lading, export invoice, German vehicle papers and the inspection report. With that, your local customs broker handles the import and registration. If you don't have a broker, we recommend a trusted one at your port.",
+  sc_eyebrow:"Service scope — clear from the start",
+  sc_h2:"What's included and what stays on your side",
+  sc_in_h:"Included in the service",
+  in1:"Complete quote within 48 h from your link",
+  in2:"Seller verification and technical inspection with report",
+  in3:"Negotiation in German and direct-purchase contract",
+  in4:"VAT-free export handling (net purchase)",
+  in5:"Inland transport in Germany to the port",
+  in6:"Export declaration and German customs",
+  in7:"RoRo sea freight + insurance to your port",
+  in8:"Original documents delivery and WhatsApp support",
+  sc_out_h:"Stays on your side",
+  out1:"The vehicle search — you choose, that's the advantage",
+  out2:"Payment for the vehicle — it goes directly to the German seller",
+  out3:"Import customs and duties in your country",
+  out4:"Transport from the port to your city",
+  out5:"Local registration of the vehicle",
+  sc_note:"<b>Delivery to port, not door to door.</b> We ship your truck or machinery to the seaport nearest to you (for example: Iquique, Callao, Montevideo, Puerto Cortés, Caucedo). The import at destination is handled by your customs broker — so you keep control of local costs and we keep the fee low and transparent. We hand over the document package exactly as your customs requires it.",
+  fe_eyebrow:"Transparent fees",
+  fe_h2:"Three items. Zero surprises.",
+  fe_lead:"You see the truck's price yourself in the listing — we never add a hidden markup on top. Our work is paid through clear fees, each at the right moment of the process.",
+  fe1_n:"FEE 01", fe1_h:"Engagement & inspection",
+  fe1_p:"Covers verification of the listing and the seller, the independent inspector's visit and the technical report with photos and video.",
+  fe1_w:"PAID: before the inspection",
+  fe2_n:"FEE 02", fe2_h:"Success commission",
+  fe2_p:"Only if you buy. Covers the negotiation, the direct-purchase contract and the VAT-free export handling. Split in two halves so it pays for results, not promises.",
+  fe2_w:"50% AT SIGNING · 50% AT SHIPPING",
+  fe3_n:"FEE 03", fe3_h:"Logistics package",
+  fe3_p:"Pickup in Germany, export customs, RoRo freight and marine insurance to your port. One fixed price, quoted from day one.",
+  fe3_w:"PAID: at vessel booking",
+  co_eyebrow:"Active routes",
+  co_h2:"We ship to the ports of Latin America",
+  co_lead:"We work with the regular RoRo routes from Hamburg, Bremerhaven and Antwerp. These are the most frequent destinations — if your country isn't listed, ask us: if there's a vessel and your country allows the import, we ship it.",
+  co_py:"Paraguay — via Montevideo / Buenos Aires", co_bo:"Bolivia — via Iquique / Arica",
+  co_do:"Dominican Republic — Caucedo", co_ec:"Ecuador — Guayaquil (machinery)",
+  fq_eyebrow:"Frequently asked questions",
+  fq_h2:"What every buyer asks before importing",
+  q1:"Why not buy directly from the German seller without an intermediary?",
+  a1:"You can try, but you'll hit three walls: many German dealers won't sell to unknown foreign buyers or handle the VAT-free sale (they'd charge you 19% extra or an equivalent deposit); you can't verify the vehicle's real condition from 10,000 km away — fraudulent listings targeting foreign buyers exist and are common; and organizing pickup, German customs and RoRo loading from outside Europe is a maze. Our job is exactly that: to be your eyes, your voice in German and your logistics operator, with a commission you see upfront.",
+  q2:"What is the VAT-free purchase and how much does it save me?",
+  a2:"Prices on German portals usually include 19% VAT. In a properly documented export outside the European Union, the seller can invoice the net price — without that 19%. We handle the procedure and the export proof the seller needs. On a €30,000 tractor unit, that's almost €5,700 in direct savings.",
+  q3:"Who do I pay for the truck? Does my money pass through Haby Trading?",
+  a3:"No. The purchase contract is directly between you and the German seller, and the payment for the vehicle goes directly to the seller's account. You only pay us our service fees and the logistics package. Safer for you, more transparent for everyone.",
+  q4:"How long does the whole process take?",
+  a4:"As a guide: quote within 48 hours, inspection in 3–7 days, negotiation and contract within a week, and sea transit between 3 and 6 weeks depending on the destination port. From link to port: usually 6 to 9 weeks.",
+  q5:"Which documents do I receive and when?",
+  a5:"Against the final payment you receive the originals: Bill of Lading (the document that lets you collect the vehicle at the port), export invoice in your name, German vehicle documentation (Fahrzeugbrief / CoC as applicable), export declaration and the inspection report. It's exactly the package your customs broker needs to clear the vehicle.",
+  q6:"What if the inspection shows the truck is in bad shape?",
+  a6:"We tell you honestly, with evidence — photos, video and the inspector's judgment. We don't charge a success commission on trucks we don't recommend: it's in our interest that you buy well and come back. The inspection fee covers the work done, and the quote for your next candidate is free.",
+  q7:"Do you handle import customs in my country?",
+  a7:"Not directly — every country has its own duties, age rules and procedures, and the right specialist is a local customs broker at your port. What we do: prepare the document package exactly as your customs requires, and recommend trusted customs brokers at the ports where we ship frequently.",
+  fi_eyebrow:"Start today — no commitment",
+  fi_h2:"Already seen a truck you like? Send us the link and within 48 hours you know exactly what it costs delivered to your port.",
+  fi_lead:"The quote is free. Write to us on WhatsApp — we answer fast, in English, Spanish or Portuguese.",
+  fi_cta:"Send a link on WhatsApp",
+  fi_mono:"DE-HAM ▸ ▸ ▸ YOUR PORT — TRANSPARENT COMMISSION · INDEPENDENT INSPECTION · DIRECT PURCHASE",
+  ft_about:"Buying agent for used trucks and heavy machinery from Germany to Latin America. Independent technical inspection, VAT-free German export and RoRo shipping to your nearest port. Importing a used Mercedes-Benz Actros, MAN TGX, Scania, Volvo or DAF from Germany — or a used European excavator, wheel loader or crane — has never been this clear.",
+  ft_service:"Service", ft_contact:"Contact", ft_wa:"WhatsApp (EN · ES · PT)",
+  ft_legal:"Haby Trading s. r. o. — Slovakia, European Union. We act as a buying agent and logistics coordinator; the vehicle purchase contract is concluded directly between the buyer and the seller. Logistics are executed with specialized partners in vehicle and rolling-cargo transport. Delivery CIF/CFR to destination port; import procedures, duties and registration at destination are the buyer's responsibility. © 2026 Haby Trading. All rights reserved.",
+  wa_text:"Hello, I found this truck in Germany: "
+},
+es: {
+  nav_search:"Dónde buscar", nav_how:"Cómo funciona", nav_scope:"Alcance del servicio", nav_fees:"Tarifas", nav_faq:"Preguntas",
+  nav_cta:"Enviar link por WhatsApp",
+  hero_eyebrow:"Agente de compra en Europa · Camiones usados y maquinaria pesada de Alemania",
+  hero_h1:"Tú eliges el camión en Alemania.<br>Nosotros lo <em>revisamos, negociamos y embarcamos</em>.",
+  hero_sub:"Haby Trading es tu agente de compra para importar camiones usados y maquinaria pesada desde Alemania a Latinoamérica: inspección técnica independiente, compra directa entre tú y el vendedor alemán —sin IVA alemán—, y envío RoRo hasta el puerto más cercano a ti. Comisión transparente. Sin inventario propio, sin sobreprecios ocultos.",
+  hero_cta1:"¿Ya encontraste uno? Envía el link", hero_cta2:"Ver cómo funciona",
+  route1:"TÚ ELIGES", route2:"INSPECCIÓN", route2s:"Alemania · informe foto/video", route3s:"Hamburgo / Bremerhaven · RoRo",
+  route5:"TU PUERTO", route5s:"Entrega + documentos originales",
+  t1:"Comisión transparente", t1s:"Tú ves el precio real del vendedor. Nuestra tarifa es fija y visible.",
+  t2:"Inspección independiente", t2s:"Informe técnico con fotos y video antes de que pagues un euro al vendedor.",
+  t3:"Compra directa", t3s:"El contrato y el pago del camión son entre tú y el vendedor alemán.",
+  t4:"Exportación sin IVA", t4s:"Gestionamos la compra neta: te ahorras el 19% de IVA alemán.",
+  mk_eyebrow:"Paso cero — la búsqueda es tuya",
+  mk_h2:"Dónde buscar tu camión o maquinaria en el mercado alemán",
+  mk_lead:"No vendemos stock propio: tienes acceso a todo el mercado alemán y europeo de camiones usados, tractocamiones, volquetes, remolques y maquinaria de construcción. Busca en estos portales —varios están en español—, y cuando encuentres algo que te guste, cópianos el link.",
+  mk1_tag:"Camiones · El más grande", mk1_p:"El mayor portal de vehículos de Alemania. Tractocamiones Mercedes Actros, MAN TGX, Scania, Volvo; volquetes, chasis, frigoríficos.", mk1_go:"Buscar en Mobile.de →",
+  mk2_tag:"Camiones · En español", mk2_p:"Especializado en vehículos comerciales y semirremolques, con filtros por precio, año y kilometraje.", mk2_go:"Buscar en TruckScout24 →",
+  mk3_tag:"Camiones + maquinaria · En español", mk3_p:"Miles de anuncios de camiones usados y maquinaria en toda Europa, con versión completa en español.", mk3_go:"Buscar en Autoline →",
+  mk4_tag:"Maquinaria pesada · En español", mk4_p:"El portal de referencia para maquinaria de construcción usada: excavadoras, cargadores frontales, grúas, compactadoras, agrícola.", mk4_go:"Buscar en Mascus →",
+  mk5_tag:"Camiones + maquinaria · En español", mk5_p:"Amplia oferta europea de camiones, autobuses, remolques y equipos de construcción con vendedores verificados.", mk5_go:"Buscar en Truck1 →",
+  mk6_tag:"Maquinaria pesada · En español", mk6_p:"Maquinaria de obra pública y agrícola usada de vendedores europeos: retroexcavadoras, motoniveladoras, plataformas.", mk6_go:"Buscar en MachineryZone →",
+  fl_eyebrow:"El proceso, sin letra pequeña",
+  fl_h2:"Cómo funciona: de un link a tu puerto en 6 pasos",
+  fl_lead:"En cada paso te decimos quién hace qué. Tu parte es sencilla: buscar, decidir y pagar directo al vendedor. Nuestra parte es todo lo demás en Alemania y en el mar.",
+  you:"Lo haces tú", us:"Lo hacemos nosotros", you_prep:"Lo haces tú — te preparamos todo",
+  s1_code:"PASO 01", s1_time:"1–2 DÍAS", s1_h:"Encuentra tu camión y envíanos el link",
+  s1_p:"Busca en Mobile.de, TruckScout24, Autoline, Mascus o cualquier portal europeo. Copia el enlace del anuncio y envíanoslo por WhatsApp. En menos de 48 horas recibes una cotización completa: precio del vehículo sin IVA alemán + nuestra comisión + flete al puerto más cercano a ti. Todo desglosado, nada escondido.",
+  s2_code:"PASO 02", s2_time:"3–7 DÍAS", s2_h:"Inspección técnica independiente en Alemania",
+  s2_p:"Si la cotización te convence, pagas la tarifa de gestión e inspección. Un inspector independiente visita el vehículo: motor, caja, chasis, frenos, fugas, historial y kilometraje real. Recibes un informe con fotos y videos. Si el camión no vale la pena, te lo decimos sin rodeos y buscas otro — la inspección te protege del fraude, el riesgo #1 al comprar a distancia.",
+  s3_code:"PASO 03", s3_time:"2–5 DÍAS", s3_h:"Negociamos el precio y la venta sin IVA",
+  s3_p:"Negociamos con el vendedor alemán en su idioma: precio final, condiciones y la venta neta de exportación (sin el 19% de IVA alemán). Preparamos el contrato de compraventa directamente entre tú y el vendedor. Al firmarse el contrato se factura la primera mitad de nuestra comisión de éxito.",
+  s4_code:"PASO 04", s4_time:"1–3 DÍAS", s4_h:"Pagas directo al vendedor alemán",
+  s4_p:"Transfieres el precio del vehículo directamente a la cuenta del vendedor — tu dinero nunca pasa por nosotros. Es tu camión desde el primer euro, con contrato y factura de exportación a tu nombre.",
+  s5_code:"PASO 05", s5_time:"2–4 SEMANAS", s5_h:"Recogida, aduana alemana y embarque RoRo",
+  s5_p:"Con nuestro socio logístico recogemos el vehículo donde esté en Alemania, tramitamos la declaración de exportación (aduana alemana), y lo embarcamos vía RoRo desde Hamburgo, Bremerhaven o Amberes. Al confirmar la reserva del buque se factura la segunda mitad de la comisión y el paquete logístico. Te enviamos actualizaciones del tránsito hasta la llegada.",
+  s6_code:"PASO 06", s6_time:"LLEGADA", s6_h:"Retiras en tu puerto con los documentos originales",
+  s6_p:"El buque llega al puerto acordado. Contra el pago final recibes el juego completo de documentos originales: Bill of Lading, factura de exportación, papeles alemanes del vehículo e informe de inspección. Con eso, tu agente aduanal local hace la importación y el registro. Si no tienes agente aduanal, te recomendamos uno de confianza en tu puerto.",
+  sc_eyebrow:"Alcance del servicio — claro desde el inicio",
+  sc_h2:"Qué incluye y qué queda de tu lado",
+  sc_in_h:"Incluido en el servicio",
+  in1:"Cotización completa en 48 h a partir de tu link",
+  in2:"Verificación del vendedor e inspección técnica con informe",
+  in3:"Negociación en alemán y contrato de compra directa",
+  in4:"Gestión de exportación sin IVA alemán (compra neta)",
+  in5:"Transporte interno en Alemania hasta el puerto",
+  in6:"Declaración de exportación y aduana alemana",
+  in7:"Flete marítimo RoRo + seguro hasta tu puerto",
+  in8:"Envío de documentos originales y soporte por WhatsApp",
+  sc_out_h:"Queda de tu lado",
+  out1:"La búsqueda del vehículo — tú eliges, esa es la ventaja",
+  out2:"El pago del vehículo — va directo al vendedor alemán",
+  out3:"Aduana e impuestos de importación en tu país",
+  out4:"Transporte desde el puerto hasta tu ciudad",
+  out5:"Matriculación y registro local del vehículo",
+  sc_note:"<b>Entrega hasta puerto, no puerta a puerta.</b> Enviamos tu camión o maquinaria al puerto marítimo más cercano a ti (por ejemplo: Iquique, Callao, Montevideo, Puerto Cortés, Caucedo). La importación en destino la maneja tu agente aduanal — así mantienes el control de los costos locales y nosotros mantenemos la tarifa baja y transparente. Te entregamos el paquete de documentos exactamente como tu aduana lo pide.",
+  fe_eyebrow:"Tarifas transparentes",
+  fe_h2:"Tres conceptos. Cero sorpresas.",
+  fe_lead:"El precio del camión lo ves tú mismo en el anuncio — jamás le sumamos un sobreprecio oculto. Nuestro trabajo se paga con tarifas claras, cada una en el momento justo del proceso.",
+  fe1_n:"TARIFA 01", fe1_h:"Gestión e inspección",
+  fe1_p:"Cubre la verificación del anuncio y del vendedor, la visita del inspector independiente y el informe técnico con fotos y video.",
+  fe1_w:"SE PAGA: antes de la inspección",
+  fe2_n:"TARIFA 02", fe2_h:"Comisión de éxito",
+  fe2_p:"Solo si compras. Cubre la negociación, el contrato de compra directa y la gestión de la exportación sin IVA. Dividida en dos mitades para que pague resultados, no promesas.",
+  fe2_w:"50% AL FIRMAR · 50% AL EMBARCAR",
+  fe3_n:"TARIFA 03", fe3_h:"Paquete logístico",
+  fe3_p:"Recogida en Alemania, aduana de exportación, flete RoRo y seguro marítimo hasta tu puerto. Un solo precio cerrado, cotizado desde el primer día.",
+  fe3_w:"SE PAGA: al reservar el buque",
+  co_eyebrow:"Rutas activas",
+  co_h2:"Enviamos a los puertos de Latinoamérica",
+  co_lead:"Trabajamos con las rutas RoRo regulares desde Hamburgo, Bremerhaven y Amberes. Estos son los destinos más frecuentes — si tu país no aparece, pregúntanos: si hay buque y tu país permite importar el vehículo, lo enviamos.",
+  co_py:"Paraguay — vía Montevideo / Buenos Aires", co_bo:"Bolivia — vía Iquique / Arica",
+  co_do:"Rep. Dominicana — Caucedo", co_ec:"Ecuador — Guayaquil (maquinaria)",
+  fq_eyebrow:"Preguntas frecuentes",
+  fq_h2:"Lo que todo comprador pregunta antes de importar",
+  q1:"¿Por qué no comprar directo al vendedor alemán sin intermediario?",
+  a1:"Puedes intentarlo, pero te encontrarás con tres muros: muchos concesionarios alemanes no venden a compradores extranjeros desconocidos ni gestionan la venta sin IVA (te cobrarían 19% extra o un depósito equivalente); no puedes verificar el estado real del vehículo a 10.000 km de distancia — los anuncios fraudulentos dirigidos a compradores extranjeros existen y son frecuentes; y organizar la recogida, la aduana alemana y el embarque RoRo desde fuera de Europa es un laberinto. Nuestro trabajo es exactamente ese: ser tus ojos, tu voz en alemán y tu operador logístico, con una comisión que ves por adelantado.",
+  q2:"¿Qué es la compra sin IVA alemán y cuánto me ahorra?",
+  a2:"Los precios en los portales alemanes suelen incluir 19% de IVA. En una exportación fuera de la Unión Europea correctamente documentada, el vendedor puede facturar el precio neto — sin ese 19%. Nosotros gestionamos el procedimiento y la prueba de exportación que el vendedor necesita. En un tractocamión de 30.000 €, son casi 5.700 € de ahorro directo.",
+  q3:"¿A quién le pago el camión? ¿Mi dinero pasa por Haby Trading?",
+  a3:"No. El contrato de compraventa es directo entre tú y el vendedor alemán, y el pago del vehículo va directo a la cuenta del vendedor. A nosotros solo nos pagas nuestras tarifas de servicio y el paquete logístico. Es más seguro para ti y más transparente para todos.",
+  q4:"¿Cuánto tarda todo el proceso?",
+  a4:"Orientativamente: cotización en 48 horas, inspección en 3–7 días, negociación y contrato en una semana, y el tránsito marítimo entre 3 y 6 semanas según el puerto de destino. De link a puerto: normalmente entre 6 y 9 semanas.",
+  q5:"¿Qué documentos recibo y cuándo?",
+  a5:"Contra el pago final recibes los originales: Bill of Lading (el documento que te permite retirar el vehículo en el puerto), factura de exportación a tu nombre, documentación alemana del vehículo (Fahrzeugbrief / COC según el caso), declaración de exportación y el informe de inspección. Es el paquete exacto que tu agente aduanal necesita para nacionalizar el vehículo.",
+  q6:"¿Qué pasa si la inspección revela que el camión está mal?",
+  a6:"Te lo decimos con total honestidad y con evidencia — fotos, video y el criterio del inspector. No cobramos comisión de éxito sobre camiones que no recomendamos: nos conviene que compres bien y vuelvas. La tarifa de inspección cubre el trabajo realizado, y la cotización del siguiente candidato es gratis.",
+  q7:"¿Manejan la aduana de importación en mi país?",
+  a7:"No directamente — cada país tiene sus aranceles, reglas de antigüedad y trámites, y el especialista correcto es un agente aduanal local en tu puerto. Lo que sí hacemos: preparar el paquete de documentos exactamente como tu aduana lo exige, y recomendarte agentes aduanales de confianza en los puertos donde trabajamos con frecuencia.",
+  fi_eyebrow:"Empieza hoy — sin compromiso",
+  fi_h2:"¿Ya viste un camión que te gusta? Envíanos el link y en 48 horas sabes exactamente cuánto cuesta puesto en tu puerto.",
+  fi_lead:"La cotización es gratis. Escríbenos por WhatsApp — respondemos rápido, en español, inglés o portugués.",
+  fi_cta:"Enviar link por WhatsApp",
+  fi_mono:"DE-HAM ▸ ▸ ▸ TU PUERTO — COMISIÓN TRANSPARENTE · INSPECCIÓN INDEPENDIENTE · COMPRA DIRECTA",
+  ft_about:"Agente de compra de camiones usados y maquinaria pesada de Alemania para Latinoamérica. Inspección técnica independiente, exportación sin IVA alemán y envío RoRo al puerto más cercano. Importar un Mercedes-Benz Actros, MAN TGX, Scania, Volvo o DAF usado desde Alemania — o una excavadora, cargador frontal o grúa usada europea — nunca fue tan claro.",
+  ft_service:"Servicio", ft_contact:"Contacto", ft_wa:"WhatsApp (ES · EN · PT)",
+  ft_legal:"Haby Trading s. r. o. — Eslovaquia, Unión Europea. Actuamos como agente de compra y coordinador logístico; el contrato de compraventa del vehículo se celebra directamente entre el comprador y el vendedor. La logística se ejecuta con socios especializados en transporte de vehículos y carga rodante. Entrega CIF/CFR hasta puerto de destino; trámites de importación, aranceles y matriculación en destino a cargo del comprador. © 2026 Haby Trading. Todos los derechos reservados.",
+  wa_text:"Hola, encontré este camión en Alemania: "
+},
+pt: {
+  nav_search:"Onde procurar", nav_how:"Como funciona", nav_scope:"Escopo do serviço", nav_fees:"Tarifas", nav_faq:"Perguntas",
+  nav_cta:"Enviar link pelo WhatsApp",
+  hero_eyebrow:"Agente de compra na Europa · Caminhões usados e máquinas pesadas da Alemanha",
+  hero_h1:"Você escolhe o caminhão na Alemanha.<br>Nós o <em>inspecionamos, negociamos e embarcamos</em>.",
+  hero_sub:"A Haby Trading é o seu agente de compra para importar caminhões usados e máquinas pesadas da Alemanha para a América Latina: inspeção técnica independente, compra direta entre você e o vendedor alemão — sem o IVA alemão — e envio RoRo até o porto mais próximo de você. Comissão transparente. Sem estoque próprio, sem sobrepreço escondido.",
+  hero_cta1:"Já encontrou um? Envie o link", hero_cta2:"Ver como funciona",
+  route1:"VOCÊ ESCOLHE", route2:"INSPEÇÃO", route2s:"Alemanha · relatório foto/vídeo", route3s:"Hamburgo / Bremerhaven · RoRo",
+  route5:"SEU PORTO", route5s:"Entrega + documentos originais",
+  t1:"Comissão transparente", t1s:"Você vê o preço real do vendedor. Nossa tarifa é fixa e visível.",
+  t2:"Inspeção independente", t2s:"Relatório técnico com fotos e vídeo antes de você pagar um euro ao vendedor.",
+  t3:"Compra direta", t3s:"O contrato e o pagamento do caminhão são entre você e o vendedor alemão.",
+  t4:"Exportação sem IVA", t4s:"Cuidamos da compra líquida: você economiza os 19% de IVA alemão.",
+  mk_eyebrow:"Passo zero — a busca é sua",
+  mk_h2:"Onde encontrar seu caminhão ou máquina no mercado alemão",
+  mk_lead:"Não vendemos estoque próprio: você tem acesso a todo o mercado alemão e europeu de caminhões usados, cavalos mecânicos, basculantes, reboques e máquinas de construção. Pesquise nestes portais e, quando encontrar algo que goste, copie o link para nós.",
+  mk1_tag:"Caminhões · O maior", mk1_p:"O maior portal de veículos da Alemanha. Cavalos mecânicos Mercedes Actros, MAN TGX, Scania, Volvo; basculantes, chassis, frigoríficos.", mk1_go:"Pesquisar no Mobile.de →",
+  mk2_tag:"Caminhões", mk2_p:"Especializado em veículos comerciais e semirreboques, com filtros por preço, ano e quilometragem.", mk2_go:"Pesquisar no TruckScout24 →",
+  mk3_tag:"Caminhões + máquinas", mk3_p:"Milhares de anúncios de caminhões usados e máquinas em toda a Europa, com versão em vários idiomas.", mk3_go:"Pesquisar no Autoline →",
+  mk4_tag:"Máquinas pesadas", mk4_p:"O portal de referência para máquinas de construção usadas: escavadeiras, pás carregadeiras, guindastes, compactadores, agrícolas.", mk4_go:"Pesquisar no Mascus →",
+  mk5_tag:"Caminhões + máquinas", mk5_p:"Ampla oferta europeia de caminhões, ônibus, reboques e equipamentos de construção de vendedores verificados.", mk5_go:"Pesquisar no Truck1 →",
+  mk6_tag:"Máquinas pesadas", mk6_p:"Máquinas de construção e agrícolas usadas de vendedores europeus: retroescavadeiras, motoniveladoras, plataformas.", mk6_go:"Pesquisar no MachineryZone →",
+  fl_eyebrow:"O processo, sem letras miúdas",
+  fl_h2:"Como funciona: de um link ao seu porto em 6 passos",
+  fl_lead:"Em cada passo dizemos quem faz o quê. A sua parte é simples: pesquisar, decidir e pagar direto ao vendedor. A nossa parte é todo o resto na Alemanha e no mar.",
+  you:"Você faz", us:"Nós fazemos", you_prep:"Você faz — nós preparamos tudo",
+  s1_code:"PASSO 01", s1_time:"1–2 DIAS", s1_h:"Encontre seu caminhão e envie o link",
+  s1_p:"Pesquise no Mobile.de, TruckScout24, Autoline, Mascus ou qualquer portal europeu. Copie o link do anúncio e envie pelo WhatsApp. Em até 48 horas você recebe uma cotação completa: preço do veículo sem IVA alemão + nossa comissão + frete até o porto mais próximo de você. Tudo detalhado, nada escondido.",
+  s2_code:"PASSO 02", s2_time:"3–7 DIAS", s2_h:"Inspeção técnica independente na Alemanha",
+  s2_p:"Se a cotação funcionar para você, paga-se a taxa de gestão e inspeção. Um inspetor independente visita o veículo: motor, câmbio, chassi, freios, vazamentos, histórico e quilometragem real. Você recebe um relatório com fotos e vídeos. Se o caminhão não valer a pena, dizemos sem rodeios e você escolhe outro — a inspeção protege você da fraude, o risco nº 1 ao comprar à distância.",
+  s3_code:"PASSO 03", s3_time:"2–5 DIAS", s3_h:"Negociamos o preço e a venda sem IVA",
+  s3_p:"Negociamos com o vendedor alemão no idioma dele: preço final, condições e a venda líquida de exportação (sem os 19% de IVA alemão). Preparamos o contrato de compra diretamente entre você e o vendedor. Na assinatura do contrato é faturada a primeira metade da nossa comissão de sucesso.",
+  s4_code:"PASSO 04", s4_time:"1–3 DIAS", s4_h:"Você paga direto ao vendedor alemão",
+  s4_p:"Você transfere o preço do veículo diretamente para a conta do vendedor — seu dinheiro nunca passa por nós. O caminhão é seu desde o primeiro euro, com contrato e fatura de exportação em seu nome.",
+  s5_code:"PASSO 05", s5_time:"2–4 SEMANAS", s5_h:"Coleta, alfândega alemã e embarque RoRo",
+  s5_p:"Com nosso parceiro logístico coletamos o veículo em qualquer lugar da Alemanha, fazemos a declaração de exportação (alfândega alemã) e o embarcamos via RoRo em Hamburgo, Bremerhaven ou Antuérpia. Na confirmação da reserva do navio são faturadas a segunda metade da comissão e o pacote logístico. Você recebe atualizações do trânsito até a chegada.",
+  s6_code:"PASSO 06", s6_time:"CHEGADA", s6_h:"Você retira no seu porto com os documentos originais",
+  s6_p:"O navio chega ao porto combinado. Contra o pagamento final você recebe o conjunto completo de originais: Bill of Lading, fatura de exportação, documentos alemães do veículo e o relatório de inspeção. Com isso, seu despachante aduaneiro local faz a importação e o registro. Se você não tiver despachante, recomendamos um de confiança no seu porto.",
+  sc_eyebrow:"Escopo do serviço — claro desde o início",
+  sc_h2:"O que está incluído e o que fica do seu lado",
+  sc_in_h:"Incluído no serviço",
+  in1:"Cotação completa em 48 h a partir do seu link",
+  in2:"Verificação do vendedor e inspeção técnica com relatório",
+  in3:"Negociação em alemão e contrato de compra direta",
+  in4:"Gestão da exportação sem IVA alemão (compra líquida)",
+  in5:"Transporte interno na Alemanha até o porto",
+  in6:"Declaração de exportação e alfândega alemã",
+  in7:"Frete marítimo RoRo + seguro até o seu porto",
+  in8:"Envio dos documentos originais e suporte pelo WhatsApp",
+  sc_out_h:"Fica do seu lado",
+  out1:"A busca do veículo — você escolhe, essa é a vantagem",
+  out2:"O pagamento do veículo — vai direto ao vendedor alemão",
+  out3:"Alfândega e impostos de importação no seu país",
+  out4:"Transporte do porto até a sua cidade",
+  out5:"Registro local do veículo",
+  sc_note:"<b>Entrega até o porto, não porta a porta.</b> Enviamos seu caminhão ou máquina ao porto marítimo mais próximo de você (por exemplo: Iquique, Callao, Montevidéu, Puerto Cortés, Caucedo). A importação no destino é feita pelo seu despachante aduaneiro — assim você mantém o controle dos custos locais e nós mantemos a tarifa baixa e transparente. Entregamos o pacote de documentos exatamente como a sua alfândega exige.",
+  fe_eyebrow:"Tarifas transparentes",
+  fe_h2:"Três itens. Zero surpresas.",
+  fe_lead:"O preço do caminhão você mesmo vê no anúncio — nunca adicionamos sobrepreço escondido. Nosso trabalho é pago com tarifas claras, cada uma no momento certo do processo.",
+  fe1_n:"TARIFA 01", fe1_h:"Gestão e inspeção",
+  fe1_p:"Cobre a verificação do anúncio e do vendedor, a visita do inspetor independente e o relatório técnico com fotos e vídeo.",
+  fe1_w:"PAGA-SE: antes da inspeção",
+  fe2_n:"TARIFA 02", fe2_h:"Comissão de sucesso",
+  fe2_p:"Só se você comprar. Cobre a negociação, o contrato de compra direta e a gestão da exportação sem IVA. Dividida em duas metades para pagar resultados, não promessas.",
+  fe2_w:"50% NA ASSINATURA · 50% NO EMBARQUE",
+  fe3_n:"TARIFA 03", fe3_h:"Pacote logístico",
+  fe3_p:"Coleta na Alemanha, alfândega de exportação, frete RoRo e seguro marítimo até o seu porto. Um preço fechado, cotado desde o primeiro dia.",
+  fe3_w:"PAGA-SE: na reserva do navio",
+  co_eyebrow:"Rotas ativas",
+  co_h2:"Enviamos para os portos da América Latina",
+  co_lead:"Trabalhamos com as rotas RoRo regulares de Hamburgo, Bremerhaven e Antuérpia. Estes são os destinos mais frequentes — se o seu país não aparecer, pergunte: se há navio e o seu país permite a importação, nós enviamos.",
+  co_py:"Paraguai — via Montevidéu / Buenos Aires", co_bo:"Bolívia — via Iquique / Arica",
+  co_do:"Rep. Dominicana — Caucedo", co_ec:"Equador — Guayaquil (máquinas)",
+  fq_eyebrow:"Perguntas frequentes",
+  fq_h2:"O que todo comprador pergunta antes de importar",
+  q1:"Por que não comprar direto do vendedor alemão sem intermediário?",
+  a1:"Você pode tentar, mas vai encontrar três muros: muitos revendedores alemães não vendem a compradores estrangeiros desconhecidos nem fazem a venda sem IVA (cobrariam 19% a mais ou um depósito equivalente); você não consegue verificar o estado real do veículo a 10.000 km de distância — anúncios fraudulentos dirigidos a compradores estrangeiros existem e são frequentes; e organizar a coleta, a alfândega alemã e o embarque RoRo de fora da Europa é um labirinto. Nosso trabalho é exatamente esse: ser seus olhos, sua voz em alemão e seu operador logístico, com uma comissão que você vê antecipadamente.",
+  q2:"O que é a compra sem IVA alemão e quanto isso me economiza?",
+  a2:"Os preços nos portais alemães normalmente incluem 19% de IVA. Em uma exportação para fora da União Europeia corretamente documentada, o vendedor pode faturar o preço líquido — sem esses 19%. Nós cuidamos do procedimento e da prova de exportação que o vendedor precisa. Em um cavalo mecânico de 30.000 €, são quase 5.700 € de economia direta.",
+  q3:"A quem eu pago o caminhão? Meu dinheiro passa pela Haby Trading?",
+  a3:"Não. O contrato de compra é direto entre você e o vendedor alemão, e o pagamento do veículo vai direto para a conta do vendedor. A nós você paga apenas nossas tarifas de serviço e o pacote logístico. Mais seguro para você, mais transparente para todos.",
+  q4:"Quanto tempo leva o processo todo?",
+  a4:"Como orientação: cotação em 48 horas, inspeção em 3–7 dias, negociação e contrato em uma semana, e o trânsito marítimo entre 3 e 6 semanas conforme o porto de destino. Do link ao porto: normalmente entre 6 e 9 semanas.",
+  q5:"Quais documentos eu recebo e quando?",
+  a5:"Contra o pagamento final você recebe os originais: Bill of Lading (o documento que permite retirar o veículo no porto), fatura de exportação em seu nome, documentação alemã do veículo (Fahrzeugbrief / CoC conforme o caso), declaração de exportação e o relatório de inspeção. É exatamente o pacote que o seu despachante aduaneiro precisa para nacionalizar o veículo.",
+  q6:"E se a inspeção mostrar que o caminhão está ruim?",
+  a6:"Dizemos com total honestidade e com evidência — fotos, vídeo e o parecer do inspetor. Não cobramos comissão de sucesso sobre caminhões que não recomendamos: é do nosso interesse que você compre bem e volte. A taxa de inspeção cobre o trabalho feito, e a cotação do próximo candidato é grátis.",
+  q7:"Vocês cuidam da alfândega de importação no meu país?",
+  a7:"Não diretamente — cada país tem suas tarifas, regras de idade e trâmites, e o especialista certo é um despachante aduaneiro local no seu porto. O que fazemos: preparar o pacote de documentos exatamente como a sua alfândega exige e recomendar despachantes de confiança nos portos onde embarcamos com frequência.",
+  fi_eyebrow:"Comece hoje — sem compromisso",
+  fi_h2:"Já viu um caminhão de que gosta? Envie o link e em 48 horas você sabe exatamente quanto custa posto no seu porto.",
+  fi_lead:"A cotação é grátis. Escreva pelo WhatsApp — respondemos rápido, em português, espanhol ou inglês.",
+  fi_cta:"Enviar link pelo WhatsApp",
+  fi_mono:"DE-HAM ▸ ▸ ▸ SEU PORTO — COMISSÃO TRANSPARENTE · INSPEÇÃO INDEPENDENTE · COMPRA DIRETA",
+  ft_about:"Agente de compra de caminhões usados e máquinas pesadas da Alemanha para a América Latina. Inspeção técnica independente, exportação sem IVA alemão e envio RoRo até o porto mais próximo. Importar um Mercedes-Benz Actros, MAN TGX, Scania, Volvo ou DAF usado da Alemanha — ou uma escavadeira, pá carregadeira ou guindaste usado europeu — nunca foi tão claro.",
+  ft_service:"Serviço", ft_contact:"Contato", ft_wa:"WhatsApp (PT · ES · EN)",
+  ft_legal:"Haby Trading s. r. o. — Eslováquia, União Europeia. Atuamos como agente de compra e coordenador logístico; o contrato de compra do veículo é celebrado diretamente entre o comprador e o vendedor. A logística é executada com parceiros especializados em transporte de veículos e carga rolante. Entrega CIF/CFR até o porto de destino; trâmites de importação, tarifas e registro no destino por conta do comprador. © 2026 Haby Trading. Todos os direitos reservados.",
+  wa_text:"Olá, encontrei este caminhão na Alemanha: "
+}
+};
+
+// ============ LANGUAGE SWITCHER ============
+let currentLang = "en";
+function setLang(lang){
+  currentLang = lang;
+  const dict = T[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+  // WhatsApp links with language-appropriate prefill
+  const waHref = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(dict.wa_text);
+  document.querySelectorAll(".wa-link").forEach(a=>a.setAttribute("href", waHref));
+  // toggle buttons
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on", b.getAttribute("data-lang")===lang));
+}
+document.querySelectorAll(".lang button").forEach(b=>{
+  b.addEventListener("click", ()=>setLang(b.getAttribute("data-lang")));
+});
+setLang("en");
+
+// ============ SCROLL REVEAL ============
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
