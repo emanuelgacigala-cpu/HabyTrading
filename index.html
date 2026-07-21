@@ -205,6 +205,7 @@ footer .legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line-d
 .modal-success h4{font-size:21px;font-weight:800;font-variation-settings:'wdth' 80;margin-bottom:10px}
 .modal-success p{color:var(--steel);font-size:15px;max-width:400px;margin:0 auto 22px}
 .modal-success .btn{justify-content:center;min-width:150px}
+.btn[disabled]{opacity:.45;cursor:not-allowed;pointer-events:none}
 </style>
 </head>
 <body>
@@ -986,9 +987,28 @@ function resetModal(){
   qmErr.textContent = T[currentLang].fm_req;
   qmForm.style.display="";
   qmSuccess.style.display="none";
-  qmSubmit.disabled=false;
   qmSubmit.innerHTML = T[currentLang].fm_send;
+  validateForm();
 }
+
+// Required fields: link, name, email, destination port
+function isFormValid(){
+  const link  = document.getElementById("qmLink").value.trim();
+  const name  = document.getElementById("qmName").value.trim();
+  const email = document.getElementById("qmEmail").value.trim();
+  const port  = document.getElementById("qmPort").value.trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  return !!(link && name && emailOk && port);
+}
+function validateForm(){
+  qmSubmit.disabled = !isFormValid();
+}
+// Re-check on every change to a required field
+["qmLink","qmName","qmEmail","qmPort"].forEach(id=>{
+  const el = document.getElementById(id);
+  el.addEventListener("input", validateForm);
+  el.addEventListener("change", validateForm);
+});
 
 // Every "send the link" button opens the form
 document.querySelectorAll(".wa-link").forEach(a=>{
@@ -1011,9 +1031,8 @@ qmSubmit.addEventListener("click", async ()=>{
   const phone = document.getElementById("qmPhone").value.trim();
   const port  = document.getElementById("qmPort").value.trim();
   const note  = document.getElementById("qmNote").value.trim();
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  if(!link || !name || !emailOk){ qmErr.classList.add("show"); return; }
+  if(!isFormValid()){ qmErr.classList.add("show"); return; }
   qmErr.classList.remove("show");
 
   const L = {
@@ -1056,8 +1075,8 @@ qmSubmit.addEventListener("click", async ()=>{
       throw new Error(data.message || "submit failed");
     }
   } catch(err){
-    qmSubmit.disabled = false;
     qmSubmit.innerHTML = dict.fm_send;
+    validateForm();
     qmErr.textContent = dict.fm_fail;
     qmErr.classList.add("show");
   }
