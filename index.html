@@ -175,6 +175,36 @@ footer .legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line-d
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 :focus-visible{outline:2.5px solid var(--cargo);outline-offset:3px}
+
+/* ---------- quote modal ---------- */
+.modal-overlay{position:fixed;inset:0;z-index:100;background:rgba(11,25,34,.72);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding:32px 18px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);border-radius:10px;width:100%;max-width:540px;margin:auto;box-shadow:0 24px 70px rgba(0,0,0,.4);animation:modalIn .18s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.modal-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:26px 28px 0}
+.modal-head h3{font-size:23px;font-weight:800;font-variation-settings:'wdth' 80;line-height:1.1}
+.modal-close{background:none;border:none;font-size:26px;line-height:1;color:var(--steel);cursor:pointer;padding:2px 4px}
+.modal-close:hover{color:var(--ink)}
+.modal-intro{padding:8px 28px 0;color:var(--steel);font-size:14.5px}
+.modal-body{padding:20px 28px 8px;display:grid;gap:15px}
+.field{display:grid;gap:6px}
+.field label{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:600}
+.field label .req{color:var(--cargo);margin-left:3px}
+.field input,.field select,.field textarea{font-family:'Archivo',sans-serif;font-size:15px;color:var(--ink);background:var(--fog);border:1.5px solid var(--line);border-radius:var(--radius);padding:11px 13px;width:100%;transition:border-color .15s ease}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cargo);background:#fff}
+.field textarea{resize:vertical;min-height:74px}
+.form-err{display:none;color:#B4331A;font-size:13.5px;font-weight:600;padding:0 28px}
+.form-err.show{display:block}
+.modal-foot{padding:16px 28px 26px;display:flex;gap:12px;flex-wrap:wrap}
+.modal-foot .btn{flex:1;justify-content:center;min-width:150px}
+.btn-line{border-color:var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+@media(max-width:520px){.modal-foot .btn{flex:1 1 100%}}
+.modal-success{padding:34px 28px 40px;text-align:center}
+.modal-success .ok-check{width:58px;height:58px;margin:0 auto 18px;border-radius:50%;background:rgba(242,92,26,.12);color:var(--cargo);font-size:30px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.modal-success h4{font-size:21px;font-weight:800;font-variation-settings:'wdth' 80;margin-bottom:10px}
+.modal-success p{color:var(--steel);font-size:15px;max-width:400px;margin:0 auto 22px}
+.modal-success .btn{justify-content:center;min-width:150px}
 </style>
 </head>
 <body>
@@ -476,6 +506,75 @@ footer .legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line-d
   </div>
 </footer>
 
+<div class="modal-overlay" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="qmTitle">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="qmTitle" data-i18n="fm_title"></h3>
+      <button type="button" class="modal-close" id="qmClose" aria-label="Close">&times;</button>
+    </div>
+    <div id="qmForm">
+    <input type="checkbox" name="botcheck" id="qmBotcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="modal-intro" data-i18n="fm_intro"></p>
+    <div class="modal-body">
+      <div class="field">
+        <label for="qmLink" data-i18n="fm_link"></label>
+        <input type="url" id="qmLink" placeholder="https://" required>
+      </div>
+      <div class="field">
+        <label for="qmName" data-i18n="fm_name"></label>
+        <input type="text" id="qmName" required>
+      </div>
+      <div class="field">
+        <label for="qmEmail" data-i18n="fm_email"></label>
+        <input type="email" id="qmEmail" required>
+      </div>
+      <div class="field">
+        <label for="qmPhone" data-i18n="fm_phone"></label>
+        <input type="tel" id="qmPhone">
+      </div>
+      <div class="field">
+        <label for="qmPort" data-i18n="fm_port"></label>
+        <select id="qmPort">
+          <option value="" data-i18n="fm_port_ph"></option>
+          <optgroup label="Chile"><option>Iquique (CL)</option><option>Arica (CL)</option><option>San Antonio (CL)</option></optgroup>
+          <optgroup label="Peru"><option>Callao (PE)</option></optgroup>
+          <optgroup label="Uruguay"><option>Montevideo (UY)</option></optgroup>
+          <optgroup label="Argentina"><option>Buenos Aires / Zárate (AR)</option></optgroup>
+          <optgroup label="Paraguay (via)"><option>Paraguay — via Montevideo / Buenos Aires (PY)</option></optgroup>
+          <optgroup label="Bolivia (via)"><option>Bolivia — via Iquique / Arica (BO)</option></optgroup>
+          <optgroup label="Ecuador"><option>Guayaquil (EC)</option></optgroup>
+          <optgroup label="Colombia"><option>Cartagena (CO)</option><option>Santa Marta (CO)</option><option>Buenaventura (CO)</option></optgroup>
+          <optgroup label="Brazil"><option>Santos (BR)</option><option>Paranaguá (BR)</option><option>Itajaí (BR)</option><option>Rio de Janeiro (BR)</option></optgroup>
+          <optgroup label="Mexico"><option>Veracruz (MX)</option><option>Altamira (MX)</option><option>Lázaro Cárdenas (MX)</option></optgroup>
+          <optgroup label="Guatemala"><option>Puerto Quetzal (GT)</option><option>Santo Tomás de Castilla (GT)</option></optgroup>
+          <optgroup label="Honduras"><option>Puerto Cortés (HN)</option></optgroup>
+          <optgroup label="Dominican Republic"><option>Caucedo (DO)</option><option>Río Haina (DO)</option></optgroup>
+          <optgroup label="Panama"><option>Colón (PA)</option></optgroup>
+          <optgroup label="Costa Rica"><option>Limón / Moín (CR)</option></optgroup>
+          <optgroup label="Venezuela"><option>La Guaira (VE)</option><option>Puerto Cabello (VE)</option></optgroup>
+          <option value="other">Other / not listed</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="qmNote" data-i18n="fm_note"></label>
+        <textarea id="qmNote" data-i18n-ph="fm_note_ph"></textarea>
+      </div>
+    </div>
+    <p class="form-err" id="qmErr" data-i18n="fm_req"></p>
+    <div class="modal-foot">
+      <button type="button" class="btn btn-line" id="qmCancel" data-i18n="fm_cancel"></button>
+      <button type="button" class="btn btn-cargo" id="qmSubmit" data-i18n="fm_send"></button>
+    </div>
+    </div>
+    <div id="qmSuccess" class="modal-success" style="display:none">
+      <div class="ok-check">✓</div>
+      <h4 data-i18n="fm_ok_title"></h4>
+      <p data-i18n="fm_ok_msg"></p>
+      <button type="button" class="btn btn-cargo" id="qmOkClose" data-i18n="fm_ok_close"></button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ============ CONFIG ============
 
@@ -579,7 +678,26 @@ en: {
   ft_service:"Service", ft_contact:"Contact", ft_wa:"contact@habytrading.com (EN · ES · PT)",
   ft_legal:"Haby Trading s. r. o. — Slovakia, European Union. We act as a buying agent and logistics coordinator; the vehicle purchase contract is concluded directly between the buyer and the seller. Logistics are executed with specialized partners in vehicle and rolling-cargo transport. Delivery CIF/CFR to destination port; import procedures, duties and registration at destination are the buyer's responsibility. © 2026 Haby Trading. All rights reserved.",
   wa_text:"Hello, I found this truck in Germany: ",
-  mail_subject:"Quote request — truck from Germany"
+  mail_subject:"Quote request — truck from Germany",
+  fm_title:"Send us the link",
+  fm_intro:"Paste the listing link and tell us where to ship. We reply within 48 h with the price landed at your port.",
+  fm_link:"Link to the used truck / machine",
+  fm_name:"Your name",
+  fm_email:"Your email",
+  fm_phone:"Phone / WhatsApp (optional)",
+  fm_port:"Destination port in Latin America",
+  fm_port_ph:"Select a port…",
+  fm_note:"Note (optional)",
+  fm_note_ph:"Anything else we should know?",
+  fm_send:"Send quote request",
+  fm_cancel:"Cancel",
+  fm_req:"Please fill in the link, your name and a valid email.",
+  fm_body_intro:"Hello Haby Trading, I'd like a quote for this vehicle:",
+  fm_sending:"Sending…",
+  fm_ok_title:"Thank you — request sent",
+  fm_ok_msg:"We received your details and will reply within 48 hours with the price landed at your port. Please check your inbox (and spam folder).",
+  fm_ok_close:"Close",
+  fm_fail:"Something went wrong sending the form. Please try again, or email us directly at contact@habytrading.com."
 },
 es: {
   nav_search:"Dónde buscar", nav_how:"Cómo funciona", nav_scope:"Alcance del servicio", nav_fees:"Tarifas", nav_faq:"Preguntas",
@@ -679,7 +797,26 @@ es: {
   ft_service:"Servicio", ft_contact:"Contacto", ft_wa:"contact@habytrading.com (ES · EN · PT)",
   ft_legal:"Haby Trading s. r. o. — Eslovaquia, Unión Europea. Actuamos como agente de compra y coordinador logístico; el contrato de compraventa del vehículo se celebra directamente entre el comprador y el vendedor. La logística se ejecuta con socios especializados en transporte de vehículos y carga rodante. Entrega CIF/CFR hasta puerto de destino; trámites de importación, aranceles y matriculación en destino a cargo del comprador. © 2026 Haby Trading. Todos los derechos reservados.",
   wa_text:"Hola, encontré este camión en Alemania: ",
-  mail_subject:"Solicitud de cotización — camión desde Alemania"
+  mail_subject:"Solicitud de cotización — camión desde Alemania",
+  fm_title:"Envíanos el enlace",
+  fm_intro:"Pega el enlace del anuncio y dinos a qué puerto enviar. Respondemos en 48 h con el precio puesto en tu puerto.",
+  fm_link:"Enlace al camión / máquina usada",
+  fm_name:"Tu nombre",
+  fm_email:"Tu correo",
+  fm_phone:"Teléfono / WhatsApp (opcional)",
+  fm_port:"Puerto de destino en América Latina",
+  fm_port_ph:"Elige un puerto…",
+  fm_note:"Nota (opcional)",
+  fm_note_ph:"¿Algo más que debamos saber?",
+  fm_send:"Enviar solicitud",
+  fm_cancel:"Cancelar",
+  fm_req:"Completa el enlace, tu nombre y un correo válido.",
+  fm_body_intro:"Hola Haby Trading, quisiera una cotización para este vehículo:",
+  fm_sending:"Enviando…",
+  fm_ok_title:"Gracias — solicitud enviada",
+  fm_ok_msg:"Recibimos tus datos y responderemos en 48 horas con el precio puesto en tu puerto. Revisa tu correo (y la carpeta de spam).",
+  fm_ok_close:"Cerrar",
+  fm_fail:"Hubo un problema al enviar el formulario. Inténtalo de nuevo o escríbenos directamente a contact@habytrading.com."
 },
 pt: {
   nav_search:"Onde procurar", nav_how:"Como funciona", nav_scope:"Escopo do serviço", nav_fees:"Tarifas", nav_faq:"Perguntas",
@@ -779,7 +916,26 @@ pt: {
   ft_service:"Serviço", ft_contact:"Contato", ft_wa:"contact@habytrading.com (PT · ES · EN)",
   ft_legal:"Haby Trading s. r. o. — Eslováquia, União Europeia. Atuamos como agente de compra e coordenador logístico; o contrato de compra do veículo é celebrado diretamente entre o comprador e o vendedor. A logística é executada com parceiros especializados em transporte de veículos e carga rolante. Entrega CIF/CFR até o porto de destino; trâmites de importação, tarifas e registro no destino por conta do comprador. © 2026 Haby Trading. Todos os direitos reservados.",
   wa_text:"Olá, encontrei este caminhão na Alemanha: ",
-  mail_subject:"Pedido de cotação — caminhão da Alemanha"
+  mail_subject:"Pedido de cotação — caminhão da Alemanha",
+  fm_title:"Envie o link",
+  fm_intro:"Cole o link do anúncio e diga para qual porto enviar. Respondemos em 48 h com o preço posto no seu porto.",
+  fm_link:"Link do caminhão / máquina usada",
+  fm_name:"Seu nome",
+  fm_email:"Seu email",
+  fm_phone:"Telefone / WhatsApp (opcional)",
+  fm_port:"Porto de destino na América Latina",
+  fm_port_ph:"Escolha um porto…",
+  fm_note:"Observação (opcional)",
+  fm_note_ph:"Mais alguma coisa que devamos saber?",
+  fm_send:"Enviar pedido",
+  fm_cancel:"Cancelar",
+  fm_req:"Preencha o link, seu nome e um email válido.",
+  fm_body_intro:"Olá Haby Trading, gostaria de uma cotação para este veículo:",
+  fm_sending:"Enviando…",
+  fm_ok_title:"Obrigado — pedido enviado",
+  fm_ok_msg:"Recebemos seus dados e responderemos em 48 horas com o preço posto no seu porto. Verifique seu email (e a caixa de spam).",
+  fm_ok_close:"Fechar",
+  fm_fail:"Ocorreu um problema ao enviar o formulário. Tente novamente ou escreva diretamente para contact@habytrading.com."
 }
 };
 
@@ -793,9 +949,11 @@ function setLang(lang){
     const key = el.getAttribute("data-i18n");
     if(dict[key] !== undefined) el.innerHTML = dict[key];
   });
-  // Email links with language-appropriate prefill
-  const mailHref = "mailto:contact@habytrading.com?subject=" + encodeURIComponent(dict.mail_subject) + "&body=" + encodeURIComponent(dict.wa_text);
-  document.querySelectorAll(".wa-link").forEach(a=>a.setAttribute("href", mailHref));
+  // Placeholders
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{
+    const key = el.getAttribute("data-i18n-ph");
+    if(dict[key] !== undefined) el.setAttribute("placeholder", dict[key]);
+  });
   // toggle buttons
   document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on", b.getAttribute("data-lang")===lang));
 }
@@ -809,6 +967,101 @@ const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
 },{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+// ============ QUOTE REQUEST MODAL ============
+// Web3Forms: get a free access key at https://web3forms.com (enter contact@habytrading.com,
+// they email you the key) and paste it below. Submissions are then delivered to that inbox.
+const WEB3FORMS_KEY = "e2553c0a-4716-4a0b-8dd0-8fb927b42ce7";
+
+const modal = document.getElementById("quoteModal");
+const qmErr = document.getElementById("qmErr");
+const qmForm = document.getElementById("qmForm");
+const qmSuccess = document.getElementById("qmSuccess");
+const qmSubmit = document.getElementById("qmSubmit");
+
+function openModal(e){ if(e) e.preventDefault(); resetModal(); modal.classList.add("open"); document.body.style.overflow="hidden"; setTimeout(()=>document.getElementById("qmLink").focus(),50); }
+function closeModal(){ modal.classList.remove("open"); document.body.style.overflow=""; }
+function resetModal(){
+  qmErr.classList.remove("show");
+  qmErr.textContent = T[currentLang].fm_req;
+  qmForm.style.display="";
+  qmSuccess.style.display="none";
+  qmSubmit.disabled=false;
+  qmSubmit.innerHTML = T[currentLang].fm_send;
+}
+
+// Every "send the link" button opens the form
+document.querySelectorAll(".wa-link").forEach(a=>{
+  a.setAttribute("href","#");
+  a.removeAttribute("target");
+  a.addEventListener("click", openModal);
+});
+
+document.getElementById("qmClose").addEventListener("click", closeModal);
+document.getElementById("qmCancel").addEventListener("click", closeModal);
+document.getElementById("qmOkClose").addEventListener("click", closeModal);
+modal.addEventListener("click", e=>{ if(e.target===modal) closeModal(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape" && modal.classList.contains("open")) closeModal(); });
+
+qmSubmit.addEventListener("click", async ()=>{
+  const dict = T[currentLang];
+  const link  = document.getElementById("qmLink").value.trim();
+  const name  = document.getElementById("qmName").value.trim();
+  const email = document.getElementById("qmEmail").value.trim();
+  const phone = document.getElementById("qmPhone").value.trim();
+  const port  = document.getElementById("qmPort").value.trim();
+  const note  = document.getElementById("qmNote").value.trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  if(!link || !name || !emailOk){ qmErr.classList.add("show"); return; }
+  qmErr.classList.remove("show");
+
+  const L = {
+    en:{link:"Listing link",name:"Name",email:"Email",phone:"Phone",port:"Destination port",note:"Note"},
+    es:{link:"Enlace del anuncio",name:"Nombre",email:"Correo",phone:"Teléfono",port:"Puerto de destino",note:"Nota"},
+    pt:{link:"Link do anúncio",name:"Nome",email:"Email",phone:"Telefone",port:"Porto de destino",note:"Observação"}
+  }[currentLang];
+
+  const payload = {
+    access_key: WEB3FORMS_KEY,
+    botcheck: document.getElementById("qmBotcheck").checked,
+    subject: dict.mail_subject,
+    from_name: "Haby Trading website",
+    // reply-to so you can reply straight to the buyer
+    replyto: email,
+    // labelled fields (appear in the email Web3Forms sends you)
+    [L.name]: name,
+    [L.email]: email,
+    [L.phone]: phone || "—",
+    [L.link]: link,
+    [L.port]: port || "—",
+    [L.note]: note || "—",
+    language: currentLang
+  };
+
+  qmSubmit.disabled = true;
+  qmSubmit.innerHTML = dict.fm_sending;
+
+  try{
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method:"POST",
+      headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if(res.ok && data.success){
+      qmForm.style.display="none";
+      qmSuccess.style.display="block";
+    } else {
+      throw new Error(data.message || "submit failed");
+    }
+  } catch(err){
+    qmSubmit.disabled = false;
+    qmSubmit.innerHTML = dict.fm_send;
+    qmErr.textContent = dict.fm_fail;
+    qmErr.classList.add("show");
+  }
+});
 </script>
 </body>
 </html>
