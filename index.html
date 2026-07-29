@@ -93,6 +93,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,25,34,.92);backdrop-f
 .markets .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:38px}
 .market-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-decoration:none;display:block;transition:border-color .15s ease,transform .15s ease}
 .market-card:hover{border-color:var(--cargo);transform:translateY(-2px)}
+.markets-note{margin-top:18px;font-size:14px;color:var(--steel);max-width:660px;border-left:3px solid var(--cargo);padding-left:14px;line-height:1.5}
 .market-card .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
 .market-card h3{font-size:19px;font-weight:800;margin:8px 0 6px;font-variation-settings:'wdth' 82}
 .market-card p{font-size:14px;color:var(--steel);line-height:1.45}
@@ -268,6 +269,7 @@ footer .legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line-d
     <p class="eyebrow" data-i18n="mk_eyebrow"></p>
     <h2 data-i18n="mk_h2"></h2>
     <p class="lead" data-i18n="mk_lead"></p>
+    <p class="markets-note" data-i18n="mk_langs"></p>
     <div class="grid">
       <a class="market-card reveal" href="https://www.mobile.de" target="_blank" rel="noopener">
         <span class="tag" data-i18n="mk1_tag"></span>
@@ -298,12 +300,6 @@ footer .legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line-d
         <h3>Truck1</h3>
         <p data-i18n="mk5_p"></p>
         <div class="go" data-i18n="mk5_go"></div>
-      </a>
-      <a class="market-card reveal" href="https://www.machineryzone.com" target="_blank" rel="noopener">
-        <span class="tag" data-i18n="mk6_tag"></span>
-        <h3>MachineryZone</h3>
-        <p data-i18n="mk6_p"></p>
-        <div class="go" data-i18n="mk6_go"></div>
       </a>
     </div>
   </div>
@@ -596,13 +592,13 @@ en: {
   t4:"VAT-free export", t4s:"We handle the net purchase: you save the 19% German VAT.",
   mk_eyebrow:"Step zero — the search is yours",
   mk_h2:"Where to find your truck or machinery on the German market",
-  mk_lead:"We don't sell our own stock: you get access to the entire German and European market of used trucks, tractor units, tippers, trailers and construction machinery. Search these portals — several have Spanish versions — and when you find something you like, just copy us the link.",
+  mk_lead:"We don't sell our own stock: you get access to the entire German and European market of used trucks, tractor units, tippers, trailers and construction machinery. Search these portals, and when you find something you like, just copy us the link.",
   mk1_tag:"Trucks · The biggest", mk1_p:"Germany's largest vehicle portal. Mercedes Actros, MAN TGX, Scania and Volvo tractor units; tippers, chassis, reefers.", mk1_go:"Search Mobile.de →",
-  mk2_tag:"Trucks · Spanish version", mk2_p:"Specialized in commercial vehicles and semi-trailers, with filters by price, year and mileage.", mk2_go:"Search TruckScout24 →",
-  mk3_tag:"Trucks + machinery · Spanish version", mk3_p:"Thousands of listings of used trucks and machinery across Europe, with a full Spanish version.", mk3_go:"Search Autoline →",
-  mk4_tag:"Heavy machinery · Spanish version", mk4_p:"The reference portal for used construction machinery: excavators, wheel loaders, cranes, compactors, agricultural.", mk4_go:"Search Mascus →",
-  mk5_tag:"Trucks + machinery · Spanish version", mk5_p:"A wide European offer of trucks, buses, trailers and construction equipment from verified sellers.", mk5_go:"Search Truck1 →",
-  mk6_tag:"Heavy machinery · Spanish version", mk6_p:"Used construction and agricultural machinery from European sellers: backhoes, graders, platforms.", mk6_go:"Search MachineryZone →",
+  mk2_tag:"Trucks · Specialized", mk2_p:"Specialized in commercial vehicles and semi-trailers, with filters by price, year and mileage.", mk2_go:"Search TruckScout24 →",
+  mk3_tag:"Trucks + machinery · Europe-wide", mk3_p:"Thousands of listings of used trucks and machinery from sellers across Europe.", mk3_go:"Search Autoline →",
+  mk4_tag:"Heavy machinery · The reference", mk4_p:"The reference portal for used construction machinery: excavators, wheel loaders, cranes, compactors, agricultural.", mk4_go:"Search Mascus →",
+  mk5_tag:"Trucks + machinery · Verified sellers", mk5_p:"A wide European offer of trucks, buses, trailers and construction equipment from verified sellers.", mk5_go:"Search Truck1 →",
+  mk_langs:"Good to know: all of these portals are also available in English, Spanish and Portuguese — just switch the site language before you search.",
   fl_eyebrow:"The process, no small print",
   fl_h2:"How it works: from a link to your port in 6 steps",
   fl_lead:"At every step we tell you who does what. Your part is simple: search, decide and pay the seller directly. Our part is everything else in Germany and at sea.",
@@ -715,13 +711,13 @@ es: {
   t4:"Exportación sin IVA", t4s:"Gestionamos la compra neta: te ahorras el 19% de IVA alemán.",
   mk_eyebrow:"Paso cero — la búsqueda es tuya",
   mk_h2:"Dónde buscar tu camión o maquinaria en el mercado alemán",
-  mk_lead:"No vendemos stock propio: tienes acceso a todo el mercado alemán y europeo de camiones usados, tractocamiones, volquetes, remolques y maquinaria de construcción. Busca en estos portales —varios están en español—, y cuando encuentres algo que te guste, cópianos el link.",
+  mk_lead:"No vendemos stock propio: tienes acceso a todo el mercado alemán y europeo de camiones usados, tractocamiones, volquetes, remolques y maquinaria de construcción. Busca en estos portales y, cuando encuentres algo que te guste, cópianos el link.",
   mk1_tag:"Camiones · El más grande", mk1_p:"El mayor portal de vehículos de Alemania. Tractocamiones Mercedes Actros, MAN TGX, Scania, Volvo; volquetes, chasis, frigoríficos.", mk1_go:"Buscar en Mobile.de →",
-  mk2_tag:"Camiones · En español", mk2_p:"Especializado en vehículos comerciales y semirremolques, con filtros por precio, año y kilometraje.", mk2_go:"Buscar en TruckScout24 →",
-  mk3_tag:"Camiones + maquinaria · En español", mk3_p:"Miles de anuncios de camiones usados y maquinaria en toda Europa, con versión completa en español.", mk3_go:"Buscar en Autoline →",
-  mk4_tag:"Maquinaria pesada · En español", mk4_p:"El portal de referencia para maquinaria de construcción usada: excavadoras, cargadores frontales, grúas, compactadoras, agrícola.", mk4_go:"Buscar en Mascus →",
-  mk5_tag:"Camiones + maquinaria · En español", mk5_p:"Amplia oferta europea de camiones, autobuses, remolques y equipos de construcción con vendedores verificados.", mk5_go:"Buscar en Truck1 →",
-  mk6_tag:"Maquinaria pesada · En español", mk6_p:"Maquinaria de obra pública y agrícola usada de vendedores europeos: retroexcavadoras, motoniveladoras, plataformas.", mk6_go:"Buscar en MachineryZone →",
+  mk2_tag:"Camiones · Especializado", mk2_p:"Especializado en vehículos comerciales y semirremolques, con filtros por precio, año y kilometraje.", mk2_go:"Buscar en TruckScout24 →",
+  mk3_tag:"Camiones + maquinaria · Toda Europa", mk3_p:"Miles de anuncios de camiones usados y maquinaria de vendedores de toda Europa.", mk3_go:"Buscar en Autoline →",
+  mk4_tag:"Maquinaria pesada · La referencia", mk4_p:"El portal de referencia para maquinaria de construcción usada: excavadoras, cargadores frontales, grúas, compactadoras, agrícola.", mk4_go:"Buscar en Mascus →",
+  mk5_tag:"Camiones + maquinaria · Vendedores verificados", mk5_p:"Amplia oferta europea de camiones, autobuses, remolques y equipos de construcción con vendedores verificados.", mk5_go:"Buscar en Truck1 →",
+  mk_langs:"Bueno saberlo: todos estos portales también están disponibles en inglés, español y portugués — solo cambia el idioma del sitio antes de buscar.",
   fl_eyebrow:"El proceso, sin letra pequeña",
   fl_h2:"Cómo funciona: de un link a tu puerto en 6 pasos",
   fl_lead:"En cada paso te decimos quién hace qué. Tu parte es sencilla: buscar, decidir y pagar directo al vendedor. Nuestra parte es todo lo demás en Alemania y en el mar.",
@@ -836,11 +832,11 @@ pt: {
   mk_h2:"Onde encontrar seu caminhão ou máquina no mercado alemão",
   mk_lead:"Não vendemos estoque próprio: você tem acesso a todo o mercado alemão e europeu de caminhões usados, cavalos mecânicos, basculantes, reboques e máquinas de construção. Pesquise nestes portais e, quando encontrar algo que goste, copie o link para nós.",
   mk1_tag:"Caminhões · O maior", mk1_p:"O maior portal de veículos da Alemanha. Cavalos mecânicos Mercedes Actros, MAN TGX, Scania, Volvo; basculantes, chassis, frigoríficos.", mk1_go:"Pesquisar no Mobile.de →",
-  mk2_tag:"Caminhões", mk2_p:"Especializado em veículos comerciais e semirreboques, com filtros por preço, ano e quilometragem.", mk2_go:"Pesquisar no TruckScout24 →",
-  mk3_tag:"Caminhões + máquinas", mk3_p:"Milhares de anúncios de caminhões usados e máquinas em toda a Europa, com versão em vários idiomas.", mk3_go:"Pesquisar no Autoline →",
-  mk4_tag:"Máquinas pesadas", mk4_p:"O portal de referência para máquinas de construção usadas: escavadeiras, pás carregadeiras, guindastes, compactadores, agrícolas.", mk4_go:"Pesquisar no Mascus →",
-  mk5_tag:"Caminhões + máquinas", mk5_p:"Ampla oferta europeia de caminhões, ônibus, reboques e equipamentos de construção de vendedores verificados.", mk5_go:"Pesquisar no Truck1 →",
-  mk6_tag:"Máquinas pesadas", mk6_p:"Máquinas de construção e agrícolas usadas de vendedores europeus: retroescavadeiras, motoniveladoras, plataformas.", mk6_go:"Pesquisar no MachineryZone →",
+  mk2_tag:"Caminhões · Especializado", mk2_p:"Especializado em veículos comerciais e semirreboques, com filtros por preço, ano e quilometragem.", mk2_go:"Pesquisar no TruckScout24 →",
+  mk3_tag:"Caminhões + máquinas · Toda a Europa", mk3_p:"Milhares de anúncios de caminhões usados e máquinas de vendedores de toda a Europa.", mk3_go:"Pesquisar no Autoline →",
+  mk4_tag:"Máquinas pesadas · A referência", mk4_p:"O portal de referência para máquinas de construção usadas: escavadeiras, pás carregadeiras, guindastes, compactadores, agrícolas.", mk4_go:"Pesquisar no Mascus →",
+  mk5_tag:"Caminhões + máquinas · Vendedores verificados", mk5_p:"Ampla oferta europeia de caminhões, ônibus, reboques e equipamentos de construção de vendedores verificados.", mk5_go:"Pesquisar no Truck1 →",
+  mk_langs:"Bom saber: todos estes portais também estão disponíveis em inglês, espanhol e português — basta mudar o idioma do site antes de pesquisar.",
   fl_eyebrow:"O processo, sem letras miúdas",
   fl_h2:"Como funciona: de um link ao seu porto em 6 passos",
   fl_lead:"Em cada passo dizemos quem faz o quê. A sua parte é simples: pesquisar, decidir e pagar direto ao vendedor. A nossa parte é todo o resto na Alemanha e no mar.",
