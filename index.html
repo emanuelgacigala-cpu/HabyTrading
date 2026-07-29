@@ -69,14 +69,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,25,34,.92);backdrop-f
 .hero p.sub{color:#AEBEC8;max-width:620px;font-size:18px}
 .hero-cta{display:flex;gap:14px;margin:34px 0 0;flex-wrap:wrap}
 /* signature: cargo manifest route strip */
-.route{margin-top:72px;border-top:1px solid var(--line-dark);background:rgba(255,255,255,.025)}
-.route-inner{display:flex;align-items:center;overflow-x:auto;padding:22px 0;scrollbar-width:none}
-.route-inner::-webkit-scrollbar{display:none}
+.route{margin-top:72px;border-top:1px solid var(--line-dark);background:rgba(255,255,255,.025);overflow:hidden}
+.route-inner{display:flex;padding:22px 0;width:max-content;will-change:transform}
+.route-set{display:flex;align-items:center;flex-shrink:0}
 .leg{display:flex;align-items:center;flex-shrink:0}
 .port{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.06em;color:#D7E1E7;white-space:nowrap}
 .port b{color:#fff;font-weight:600}
 .port small{display:block;color:var(--steel);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;margin-top:2px}
-.dash{width:74px;height:1px;margin:0 18px;background:repeating-linear-gradient(90deg,var(--cargo) 0 7px,transparent 7px 13px);position:relative}
+.dash{width:74px;height:1px;margin:0 18px;background:repeating-linear-gradient(90deg,var(--cargo) 0 7px,transparent 7px 13px);position:relative;flex-shrink:0}
 .dash::after{content:'▸';position:absolute;right:-4px;top:-9px;color:var(--cargo);font-size:11px}
 
 /* ---------- trust strip ---------- */
@@ -245,12 +245,14 @@ footer .legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line-d
     </div>
   </div>
   <div class="route" aria-hidden="true">
-    <div class="wrap route-inner">
-      <div class="leg"><div class="port"><b data-i18n="route1"></b><small>Mobile.de · TruckScout24 · Mascus</small></div><div class="dash"></div></div>
-      <div class="leg"><div class="port"><b data-i18n="route2"></b><small data-i18n="route2s"></small></div><div class="dash"></div></div>
-      <div class="leg"><div class="port"><b>DE-HAM</b><small data-i18n="route3s"></small></div><div class="dash"></div></div>
-      <div class="leg"><div class="port"><b>PY · BO · CL · PE</b><small>GT · HN · DO · UY</small></div><div class="dash"></div></div>
-      <div class="leg"><div class="port"><b data-i18n="route5"></b><small data-i18n="route5s"></small></div></div>
+    <div class="route-inner">
+      <div class="route-set">
+        <div class="leg"><div class="port"><b data-i18n="route1"></b><small>Mobile.de · TruckScout24 · Mascus</small></div><div class="dash"></div></div>
+        <div class="leg"><div class="port"><b data-i18n="route2"></b><small data-i18n="route2s"></small></div><div class="dash"></div></div>
+        <div class="leg"><div class="port"><b>DE-HAM</b><small data-i18n="route3s"></small></div><div class="dash"></div></div>
+        <div class="leg"><div class="port"><b>PY · BO · CL · PE</b><small>GT · HN · DO · UY</small></div><div class="dash"></div></div>
+        <div class="leg"><div class="port"><b data-i18n="route5"></b><small data-i18n="route5s"></small></div></div>
+      </div>
     </div>
   </div>
 </div>
@@ -966,6 +968,74 @@ document.querySelectorAll(".lang button").forEach(b=>{
   b.addEventListener("click", ()=>setLang(b.getAttribute("data-lang")));
 });
 setLang("en");
+
+// ============ ROUTE STRIP — bounce left↔right ============
+(function(){
+  const view = document.querySelector(".route");
+  const track = document.querySelector(".route-inner");
+  if(!view || !track) return;
+
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const MIN_TRAVEL = 120;   // ensure at least this much visible movement (px)
+  const CYCLE = 7000;       // ms for one direction (left→right); constant feel at any width
+  let span = 0;             // signed travel distance
+  let startPos = 0;         // pos at span start (one edge)
+  let endPos = 0;           // pos at other edge
+  let pos = 0;
+  let t0 = null;
+  let dir = 1;              // 1: startPos→endPos, -1: back
+  let paused = false, pausedAt = 0;
+
+  function measure(){
+    const gap = view.clientWidth - track.scrollWidth; // >0 strip narrower, <0 overflows
+    let a, bnd;
+    if(gap >= 0){
+      a = 0; bnd = gap;            // slide across empty space
+    } else {
+      a = 0; bnd = gap;            // slide by overflow (negative)
+    }
+    // Guarantee a minimum visible travel; if the natural range is too small,
+    // extend it symmetrically (tiles may drift a few px past the edges at the extremes).
+    let lo = Math.min(a,bnd), hi = Math.max(a,bnd);
+    let range = hi - lo;
+    if(range < MIN_TRAVEL){
+      const extra = (MIN_TRAVEL - range)/2;
+      lo -= extra; hi += extra;
+    }
+    startPos = lo; endPos = hi;
+    span = endPos - startPos;
+    if(pos < startPos) pos = startPos; if(pos > endPos) pos = endPos;
+    track.style.transform = "translateX(" + pos.toFixed(2) + "px)";
+  }
+
+  function frame(t){
+    if(paused){ t0 = t - pausedAt; requestAnimationFrame(frame); return; }
+    if(t0 === null) t0 = t;
+    let elapsed = t - t0;
+    // eased ping-pong 0..1..0 over 2*CYCLE
+    const full = CYCLE * 2;
+    let phase = (elapsed % full) / full;      // 0..1 across a full round trip
+    // triangle wave 0→1→0
+    let tri = phase < 0.5 ? phase*2 : (1-phase)*2;
+    // ease in-out for a soft bounce at the edges
+    const eased = tri<0.5 ? 2*tri*tri : 1-Math.pow(-2*tri+2,2)/2;
+    pos = startPos + span * eased;
+    track.style.transform = "translateX(" + pos.toFixed(2) + "px)";
+    requestAnimationFrame(frame);
+  }
+
+  view.addEventListener("mouseenter", ()=>{ if(!paused){ paused=true; pausedAt = performance.now() - (t0||performance.now()); }});
+  view.addEventListener("mouseleave", ()=>{ paused=false; });
+  window.addEventListener("resize", measure);
+  document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click", ()=>setTimeout(measure,40)));
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(()=>setTimeout(measure,50)); }
+  setTimeout(measure, 300);
+
+  measure();
+  if(!reduced) requestAnimationFrame(frame);
+})();
+
+
 
 // ============ SCROLL REVEAL ============
 const io = new IntersectionObserver((entries)=>{
